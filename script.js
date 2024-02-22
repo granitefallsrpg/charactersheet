@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const classSelect = document.getElementById("class");
+    const abilitiesDiv = document.getElementById("abilities");
+    const bonusesDiv = document.getElementById("bonuses");
+    const negativesDiv = document.getElementById("negatives");
+    const abilityScoresDiv = document.getElementById("abilityScores");
+
 // Generate ability scores based on class
 function generateAbilityScores(selectedClass) {
     let abilityScores = {};
@@ -76,19 +83,24 @@ function generateAbilityScores(selectedClass) {
     return abilityScores;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const classSelect = document.getElementById("class");
-    const abilitiesDiv = document.getElementById("abilities");
-    const bonusesDiv = document.getElementById("bonuses");
-    const negativesDiv = document.getElementById("negatives");
-    const abilityScoresDiv = document.getElementById("abilityScores");
+  return abilityScores;
+    }
 
     classSelect.addEventListener("change", function() {
         const selectedClass = classSelect.value;
         let abilities = [];
         let bonuses = [];
         let negatives = [];
-        let abilityScores = generateAbilityScores(selectedClass);
+
+        // Call the function to generate ability scores based on the selected class
+        const abilityScores = generateAbilityScores(selectedClass);
+
+        // Display ability scores
+        abilitiesDiv.innerHTML = "<h3>Ability Scores</h3>";
+        for (const [ability, score] of Object.entries(abilityScores)) {
+            abilitiesDiv.innerHTML += `<div><strong>${ability}:</strong> ${score}</div>`;
+        }
+
 
         switch (selectedClass) {
             case "Nerdy Scholar":
