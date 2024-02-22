@@ -196,18 +196,17 @@ async function generatePDF() {
     const pdfDoc = await PDFDocument.create();
     const page = pdfDoc.addPage();
 
-    // Convert character sheet HTML to PDF
+    // Convert character sheet HTML to image
     const pdfContent = characterSheet.innerHTML;
-    const svgUrl = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${page.getWidth()}" height="${page.getHeight()}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml">${pdfContent}</div></foreignObject></svg>`);
-    const svgImage = await pdfDoc.embedSvg(svgUrl);
+    const imageData = await pdfDoc.embedPng(pdfContent);
 
-    // Draw SVG onto the PDF page
-    const { width, height } = svgImage.scale(0.75);
-    page.drawSvg(svgImage, {
+    // Draw image onto the PDF page
+    const imageDims = imageData.scale(0.75);
+    page.drawImage(imageData, {
         x: 50,
-        y: page.getHeight() - height - 50,
-        width,
-        height,
+        y: page.getHeight() - imageDims.height - 50,
+        width: imageDims.width,
+        height: imageDims.height,
     });
 
     // Save PDF with character name as filename
