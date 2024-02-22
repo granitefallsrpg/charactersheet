@@ -106,7 +106,7 @@ const classDetails = {
     }
 };
 
-  function updateClass() {
+ function updateClass() {
     const selectedClass = document.getElementById("class").value;
 
     // Update ability scores based on selected class
@@ -137,7 +137,6 @@ const classDetails = {
     // Update class description and details
     updateClassDetails(selectedClass);
 }
-
 function updateAbilityScores(baseScores, bonuses, negatives) {
     // Update ability score fields in the form
     const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
