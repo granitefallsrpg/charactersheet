@@ -237,5 +237,6 @@ for (const [ability, score] of Object.entries(abilityScores)) {
     abilityScoresHTML += `<div><strong>${ability}:</strong> ${score}</div>`;
 }
 abilityScoresDiv.innerHTML = abilityScoresHTML;
+    }
     });
-
+});
