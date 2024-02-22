@@ -204,24 +204,38 @@ function generatePDF() {
     });
 }
 
-// Event listener for "Save Character" button click
-document.getElementById("saveCharacterBtn").addEventListener("click", function() {
-    generatePDF();
-});
-
-// Function to generate PDF of the character sheet
-function generatePDF() {
+async function generatePDF() {
     const charName = document.getElementById("charName").value;
     const characterSheet = document.getElementById("characterForm");
 
-    // Create a new jsPDF instance
-    const pdf = new jsPDF();
+    // Create a new PDF document
+    const { PDFDocument, rgb } = PDFLib;
+    const pdfDoc = await PDFDocument.create();
+    const page = pdfDoc.addPage();
 
     // Convert character sheet HTML to PDF
-    pdf.html(characterSheet, {
-        callback: function (pdf) {
-            // Save PDF with character name as filename
-            pdf.save(`${charName}_CharacterSheet.pdf`);
-        }
+    const pdfContent = characterSheet.innerHTML;
+    const svgUrl = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${page.getWidth()}" height="${page.getHeight()}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml">${pdfContent}</div></foreignObject></svg>`);
+    const svgImage = await pdfDoc.embedSvg(svgUrl);
+
+    // Draw SVG onto the PDF page
+    const { width, height } = svgImage.scale(0.75);
+    page.drawSvg(svgImage, {
+        x: 50,
+        y: page.getHeight() - height - 50,
+        width,
+        height,
     });
+
+    // Save PDF with character name as filename
+    const pdfBytes = await pdfDoc.save();
+    downloadPDF(pdfBytes, `${charName}_CharacterSheet.pdf`);
+}
+
+function downloadPDF(pdfBytes, fileName) {
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
 }
