@@ -134,7 +134,7 @@ function updateAbilityScores(bonuses, negatives) {
     const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
     abilityFields.forEach(field => {
         const inputElement = document.getElementById(field);
-        const baseValue = parseInt(inputElement.value);
+        const baseValue = parseInt(inputElement.value) || 0;
         const bonus = bonuses[field] || 0;
         const negative = negatives[field] || 0;
         inputElement.value = baseValue + bonus + negative;
