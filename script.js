@@ -210,29 +210,32 @@ function generateAbilityScores(selectedClass) {
                 break;
         }
 
-        // Populate abilities
-        abilitiesDiv.innerHTML = "<h3>Abilities</h3>";
-        abilities.forEach(function(ability, index) {
-            abilitiesDiv.innerHTML += `<div><strong>Ability ${index + 1}:</strong> ${ability}</div>`;
-        });
-
-        // Populate bonuses
-        bonusesDiv.innerHTML = "<h3>Bonuses</h3>";
-        bonuses.forEach(function(bonus) {
-            bonusesDiv.innerHTML += `<div>${bonus}</div>`;
-        });
-
-        // Populate negatives
-        negativesDiv.innerHTML = "<h3>Negatives</h3>";
-        negatives.forEach(function(negative) {
-            negativesDiv.innerHTML += `<div>${negative}</div>`;
-        });
-
-        // Populate ability scores
-        abilityScoresDiv.innerHTML = "<h3>Ability Scores</h3>";
-        for (const [ability, score] of Object.entries(abilityScores)) {
-            abilityScoresDiv.innerHTML += `<div><strong>${ability}:</strong> ${score}</div>`;
-        }
-    });
+       // Populate abilities
+let abilitiesHTML = "<h3>Abilities</h3>";
+abilities.forEach(function(ability, index) {
+    abilitiesHTML += `<div><strong>Ability ${index + 1}:</strong> ${ability}</div>`;
 });
+abilitiesDiv.innerHTML = abilitiesHTML;
+
+// Populate bonuses
+let bonusesHTML = "<h3>Bonuses</h3>";
+bonuses.forEach(function(bonus) {
+    bonusesHTML += `<div>${bonus}</div>`;
+});
+bonusesDiv.innerHTML = bonusesHTML;
+
+// Populate negatives
+let negativesHTML = "<h3>Negatives</h3>";
+negatives.forEach(function(negative) {
+    negativesHTML += `<div>${negative}</div>`;
+});
+negativesDiv.innerHTML = negativesHTML;
+
+// Populate ability scores
+let abilityScoresHTML = "<h3>Ability Scores</h3>";
+for (const [ability, score] of Object.entries(abilityScores)) {
+    abilityScoresHTML += `<div><strong>${ability}:</strong> ${score}</div>`;
+}
+abilityScoresDiv.innerHTML = abilityScoresHTML;
+    });
 
