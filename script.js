@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let abilities = [];
         let bonuses = [];
         let negatives = [];
+        let abilityScores = generateAbilityScores(selectedClass);
 
         switch (selectedClass) {
             case "Nerdy Scholar":
@@ -102,21 +103,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 ];
                 break;
             case "Overachieving Student Council President":
-                abilities = [
-                    "Inspiring Leadership - Lead by example to inspire allies, granting them temporary bonuses to skill checks or saving throws.",
-                    "Efficient Organizer - Delegate tasks and coordinate efforts to accomplish goals more effectively, reducing the time or resources required for certain actions.",
-                    "Diplomatic Negotiation - Use diplomacy and persuasion to defuse conflicts or sway NPCs to the character's cause."
-                ];
-                bonuses = [
-                    "Natural Leader: Gain a +2 bonus to Charisma-based skill checks when organizing or leading group activities.",
-                    "Efficient Planner: Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
-                ];
-                negatives = [
+                abilities = [egatives = [
                     "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise.",
                     "Burnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations."
                 ];
                 break;
         }
+
+        // Update ability scores based on bonuses and negatives
+        updateAbilityScores(abilityScores, bonuses, negatives);
 
         // Populate abilities
         abilitiesDiv.innerHTML = "<h3>Abilities</h3>";
@@ -135,5 +130,155 @@ document.addEventListener("DOMContentLoaded", function() {
         negatives.forEach(function(negative) {
             negativesDiv.innerHTML += `<div>${negative}</div>`;
         });
+
+        // Display ability scores
+        displayAbilityScores(abilityScores);
     });
 });
+
+// Function to update ability scores based on bonuses and negatives
+function updateAbilityScores(abilityScores, bonuses, negatives) {
+    bonuses.forEach(function(bonus) {
+        const modifier = getModifierFromBonus(bonus);
+        if (modifier !== 0) {
+            const ability = getAbilityFromBonus(bonus);
+            abilityScores[ability] += modifier;
+        }
+    });
+
+    negatives.forEach(function(negative) {
+        const modifier = getModifierFromNegative(negative);
+        if (modifier !== 0) {
+            const ability = getAbilityFromNegative(negative);
+            abilityScores[ability] += modifier;
+        }
+    });
+}
+
+// Function to extract the ability affected by a bonus
+function getAbilityFromBonus(bonus) {
+    const regex = /to\s(\w+)/;
+    const matches = bonus.match(regex);
+    if (matches && matches.length > 1) {
+        return matches[1];
+    }
+    return null;
+}
+
+// Function to extract the ability affected by a negative
+function getAbilityFromNegative(negative) {
+    const regex = /to\s(\w+)-based/;
+    const matches = negative.match(regex);
+    if (matches && matches.length > 1) {
+        return matches[1];
+    }
+    return null;
+}
+
+// Function to extract the modifier from a bonus
+function getModifierFromBonus(bonus) {
+    const regex = /(\+|-)\d+/;
+    const matches = bonus.match(regex);
+    if (matches && matches.length > 0) {
+        return parseInt(matches[0]);
+    }
+    return 0;
+}
+
+// Function to extract the modifier from a negative
+function getModifierFromNegative(negative) {
+    const regex = /(-)\d+/;
+    const matches = negative.match(regex);
+    if (matches && matches.length > 0) {
+        return parseInt(matches[0]);
+    }
+    return 0;
+}
+
+// Function to display ability scores
+function displayAbilityScores(abilityScores) {
+    const abilityScoresDiv = document.getElementById("ability-scores");
+    abilityScoresDiv.innerHTML = "<h3>Ability Scores</h3>";
+    for (const ability in abilityScores) {
+        abilityScoresDiv.innerHTML += `<div><strong>${ability}:</strong> ${abilityScores[ability]}</div>`;
+    }
+}
+
+// Generate ability scores based on class
+function generateAbilityScores(selectedClass) {
+    let abilityScores = {};
+    switch (selectedClass) {
+        case "Nerdy Scholar":
+            abilityScores = {
+                Strength: 10,
+                Dexterity: 10,
+                Constitution: 10,
+                Intelligence: 15,
+                Wisdom: 13,
+                Charisma: 8
+            };
+            break;
+        case "Athletic Jock":
+            abilityScores = {
+                Strength: 15,
+                Dexterity: 14,
+                Constitution: 12,
+                Intelligence: 10,
+                Wisdom: 8,
+                Charisma: 13
+            };
+            break;
+        case "Gothic Artist":
+            abilityScores = {
+                Strength: 10,
+                Dexterity: 12,
+                Constitution: 13,
+                Intelligence: 10,
+                Wisdom: 15,
+                Charisma: 8
+            };
+            break;
+        case "Preppy Cheerleader/Cheer Captain":
+            abilityScores = {
+                Strength: 10,
+                Dexterity: 13,
+                Constitution: 12,
+                Intelligence: 10,
+                Wisdom: 8,
+                Charisma: 15
+            };
+            break;
+        case "Class Clown":
+            abilityScores = {
+                Strength: 10,
+                Dexterity: 13,
+                Constitution: 12,
+                Intelligence: 10,
+                Wisdom: 8,
+                Charisma: 15
+            };
+            break;
+        case "Rebel Outsider":
+            abilityScores = {
+                Strength: 12,
+                Dexterity: 14,
+                Constitution: 13,
+                Intelligence: 10,
+                Wisdom: 15,
+                Charisma: 8
+            };
+            break;
+        case "Overachieving Student Council President":
+            abilityScores = {
+                Strength: 10,
+                Dexterity: 10,
+                Constitution: 10,
+                Intelligence: 12,
+                Wisdom: 15,
+                Charisma: 13
+            };
+            break;
+    }
+    return abilityScores;
+}
+                   
