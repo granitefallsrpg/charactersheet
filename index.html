@@ -10,15 +10,55 @@
     <div class="container">
         <h1>Character Creation</h1>
         <form id="characterForm">
-            <label for="className">Choose a Class:</label>
-            <select id="className" name="className">
+            <label for="characterName">Character Name:</label>
+            <input type="text" id="characterName" name="characterName" required>
+            
+            <label for="class">Class:</label>
+            <select id="class" name="class" required>
+                <option value="">Select a Class</option>
                 <option value="Nerdy Scholar">Nerdy Scholar</option>
                 <option value="Athletic Jock">Athletic Jock</option>
                 <!-- Add other class options here -->
             </select>
-            
-            <!-- Other input fields for character details -->
-            
+
+            <label for="level">Level:</label>
+            <input type="text" id="level" name="level" required>
+
+            <label for="background">Background:</label>
+            <textarea id="background" name="background" rows="4" required></textarea>
+
+            <label for="appearance">Appearance:</label>
+            <textarea id="appearance" name="appearance" rows="4" required></textarea>
+
+            <h2>Abilities</h2>
+            <div id="abilities">
+                <!-- Abilities will be populated dynamically based on the selected class -->
+            </div>
+
+            <h2>Attributes</h2>
+            <div id="attributes">
+                <!-- Attributes will be populated dynamically based on the selected class -->
+            </div>
+
+            <h2>Skills</h2>
+            <div id="skills">
+                <!-- Skills will be populated dynamically based on the selected class and level -->
+            </div>
+
+            <h2>Attacks/Actions</h2>
+            <div id="attacksActions">
+                <!-- Attacks/Actions will be populated dynamically based on the selected class and level -->
+            </div>
+
+            <label for="equipment">Equipment:</label>
+            <textarea id="equipment" name="equipment" rows="4" required></textarea>
+
+            <label for="backgroundStory">Background Story:</label>
+            <textarea id="backgroundStory" name="backgroundStory" rows="4" required></textarea>
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="4" required></textarea>
+
             <button type="submit">Create Character</button>
         </form>
     </div>
