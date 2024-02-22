@@ -84,7 +84,7 @@ function generateAbilityScores(selectedClass) {
 }
 
   return abilityScores;
-    }
+    }}
 
     classSelect.addEventListener("change", function() {
         const selectedClass = classSelect.value;
@@ -238,5 +238,4 @@ for (const [ability, score] of Object.entries(abilityScores)) {
 }
 abilityScoresDiv.innerHTML = abilityScoresHTML;
     }
-    });
 });
