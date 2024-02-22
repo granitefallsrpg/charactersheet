@@ -12,12 +12,6 @@ const classDetails = {
         },
         description: "Nerdy Scholars are intellectual powerhouses, known for their sharp minds and insatiable thirst for knowledge.",
         details: "While Nerdy Scholars excel in academic pursuits, they may struggle in social situations due to social awkwardness and overthinking.",
-        Bonuses: 
-            "Bookworm: Gain a +2 bonus to Intelligence-based skill checks.",
-            "Researcher: Can spend extra time studying to gain advantage on Knowledge-based skill checks.",
-        Negatives:
-        "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations.",
-        "Overthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls."
 
     },
     athleticJock: {
