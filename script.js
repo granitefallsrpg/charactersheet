@@ -106,7 +106,7 @@ const classDetails = {
     }
 };
 
-function updateClass() {
+  function updateClass() {
     const selectedClass = document.getElementById("class").value;
 
     // Update ability scores based on selected class
