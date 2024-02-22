@@ -12,7 +12,7 @@ const classDetails = {
         },
         description: "Nerdy Scholars are intellectual powerhouses, known for their sharp minds and insatiable thirst for knowledge.",
         details: "While Nerdy Scholars excel in academic pursuits, they may struggle in social situations due to social awkwardness and overthinking.",
-
+        negativeDescription: "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations.\nOverthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls."
     },
     athleticJock: {
         bonuses: {
@@ -26,7 +26,8 @@ const classDetails = {
             teamPlayer: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks."
         },
         description: "Athletic Jocks are physical powerhouses, dominating sports fields and leading their teams to victory.",
-        details: "While Athletic Jocks excel in physical activities and team sports, they may struggle with short temper and overconfidence."
+        details: "While Athletic Jocks excel in physical activities and team sports, they may struggle with short temper and overconfidence.",
+        negativeDescription: "Short Temper: -1 penalty to Charisma-based skill checks when faced with opposition or conflict.\nOverconfidence: May underestimate opponents, resulting in a -1 penalty to AC when in combat."
     },
     gothicArtist: {
         bonuses: {
@@ -40,7 +41,8 @@ const classDetails = {
             mysticAura: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks."
         },
         description: "Gothic Artists are creative souls, expressing themselves through their unique artistic vision and mystic aura.",
-        details: "While Gothic Artists thrive in artistic endeavors and mystic pursuits, they may struggle with isolationism and emotional turmoil."
+        details: "While Gothic Artists thrive in artistic endeavors and mystic pursuits, they may struggle with isolationism and emotional turmoil.",
+        negativeDescription: "Isolationist: -1 penalty to Charisma-based skill checks when attempting to interact with mainstream social groups.\nEmotional Turmoil: May succumb to mood swings, resulting in a -1 penalty to concentration checks."
     },
     preppyCheerleader: {
         bonuses: {
@@ -54,7 +56,8 @@ const classDetails = {
             teamSpirit: "Can inspire allies with pep talks, granting them advantage on saving throws against fear."
         },
         description: "Preppy Cheerleaders are charismatic leaders, spreading positivity and team spirit wherever they go.",
-        details: "While Preppy Cheerleaders shine as natural leaders and motivators, they may struggle with entitled attitudes and peer pressure."
+        details: "While Preppy Cheerleaders shine as natural leaders and motivators, they may struggle with entitled attitudes and peer pressure.",
+        negativeDescription: "Entitled Attitude: -1 penalty to Wisdom-based skill checks when faced with challenges that require humility or empathy.\nPeer Pressure: May succumb to social expectations, resulting in a -1 penalty to Wisdom saving throws against charm effects."
     },
     classClown: {
         bonuses: {
@@ -68,7 +71,8 @@ const classDetails = {
             quickWit: "Can use humor to defuse tense situations, granting advantage on Persuasion checks."
         },
         description: "Class Clowns are masters of humor, using their quick wit and natural charm to entertain and diffuse tension.",
-        details: "While Class Clowns thrive as entertainers and social butterflies, they may struggle with attention-seeking behavior and disruptive tendencies."
+        details: "While Class Clowns thrive as entertainers and social butterflies, they may struggle with attention-seeking behavior and disruptive tendencies.",
+        negativeDescription: "Attention Seeker: -1 penalty to Wisdom-based skill checks when focus and concentration are required.\nDisruptive Behavior: May struggle to take situations seriously, resulting in a -1 penalty to initiative rolls during combat encounters."
     },
     rebelOutsider: {
         bonuses: {
@@ -82,7 +86,8 @@ const classDetails = {
             resistanceToAuthority: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures."
         },
         description: "Rebel Outsiders are nonconformists, challenging authority and forging their own path with independence and resilience.",
-        details: "While Rebel Outsiders excel as independent thinkers and resilient individuals, they may struggle with alienation and risk-taking tendencies."
+        details: "While Rebel Outsiders excel as independent thinkers and resilient individuals, they may struggle with alienation and risk-taking tendencies.",
+        negativeDescription: "Alienation: -1 penalty to Charisma-based skill checks when attempting to connect with mainstream social groups.\nRisk Taker: May act impulsively, resulting in a -1 penalty to AC when in combat."
     },
     overachievingStudentCouncilPresident: {
         bonuses: {
@@ -96,7 +101,8 @@ const classDetails = {
             efficientPlanner: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
         },
         description: "Overachieving Student Council Presidents are natural leaders, guiding their peers with charisma and efficiency.",
-        details: "While Overachieving Student Council Presidents excel in leadership and planning, they may struggle with perfectionism and burnout."
+        details: "While Overachieving Student Council Presidents excel in leadership and planning, they may struggle with perfectionism and burnout.",
+        negativeDescription: "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise.\nBurnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations."
     }
 };
 
