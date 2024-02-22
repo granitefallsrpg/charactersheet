@@ -20,12 +20,22 @@
             <option value="preppyCheerleader">Preppy Cheerleader/Cheer Captain</option>
             <option value="classClown">Class Clown</option>
             <option value="rebelOutsider">Rebel Outsider</option>
+            <option value="OverachievingStudentCouncilPresident">Rebel Outsider</option>
+            <!-- Add options for other classes -->
         </select><br><br>
         
         <label for="level">Level:</label>
         <select id="level" name="level" onchange="levelUp()">
             <option value="1">1</option>
             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             <option value="9">9</option>
+             <option value="10">10</option>
             <!-- Add options for other levels -->
         </select><br><br>
         
@@ -53,7 +63,17 @@
         <label for="charisma">Charisma:</label>
         <input type="text" id="charisma" name="charisma" readonly><br><br>
         
-        <!-- Add fields for skills, attacks/actions, equipment, background story, notes, etc. -->
+        <div id="skills">
+            <!-- Skills will be dynamically generated here -->
+        </div>
+        
+        <div id="classDescription">
+            <!-- Class description will be dynamically updated here -->
+        </div>
+        
+        <div id="classDetails">
+            <!-- Class details will be dynamically updated here -->
+        </div>
         
         <button type="submit">Save Character</button>
     </form>
