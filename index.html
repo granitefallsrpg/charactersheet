@@ -3,72 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Creation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Character Sheet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="intro">
-        <h1>Welcome to Granite Falls</h1>
-        <p>
-            Granite Falls, nestled on the edge of the Alaskan wilderness, traces its roots back to the 17th century. The town's genesis was marked by the discovery of rich granite quarries that promised prosperity to those brave enough to venture into the untamed lands. As word of the abundant resources spread, a steady influx of miners from far and wide flocked to Granite Falls, seeking fortune within its rocky embrace.
-        </p>
-        <p>
-            The ebb and flow of life in Granite Falls were intricately tied to the mining seasons. During the peak of these seasons, the town center pulsated with activity. Miners set up temporary abodes among the towering rock formations, transforming Granite Falls into a bustling hub. Hotels, taverns, and trading posts lined narrow streets, offering respite to weary prospectors who sought shelter from the harsh wilderness.
-        </p>
-        <p>
-            However, as winter cast its icy grip, Granite Falls underwent a stark transformation. The once vibrant streets turned desolate, and the population dwindled to a mere fraction of its bustling summer numbers. Only the most resilient individuals remained, weathering the biting cold that engulfed the town. The haunting silence of the winter-stricken landscape stood in stark contrast to the lively summers, concealing the town's secrets beneath layers of snow and whispers of the past.
-        </p>
-        <p>
-            The granite quarries, the lifeblood of Granite Falls, became the driving force behind the town's existence. Miners toiled tirelessly, extracting the precious stone that held promises of wealth and prosperity. The towering rock formations served as a constant reminder of both the town's industrious spirit and the untamed wilderness that surrounded it.
-        </p>
-        <p>
-            The origins of Granite Falls are deeply entwined with the promise of a destiny forever linked to the land it sought to tame. The town, founded on the precipice of change, embraced a cycle of existence that would weave its way through the centuries. As we embark on the journey through the ages, the stage is set, and Granite Falls emerges from the mists of time, ready to unveil the mysteries that have shaped its history.
-        </p>
-    </div>
-
-    <div class="container">
-        <h2>Character Creation</h2>
-        <form id="characterForm">
-            <div class="form-section">
-                <h3>Character Information</h3>
-                <label for="characterName">Character Name:</label>
-                <input type="text" id="characterName" name="characterName" required>
-                
-                <label for="class">Class:</label>
-                <select id="class" name="class" required>
-                    <option value="">Select a Class</option>
-                    <option value="Nerdy Scholar">Nerdy Scholar</option>
-                    <option value="Athletic Jock">Athletic Jock</option>
-                    <option value="Gothic Artist">Gothic Artist</option>
-                    <option value="Preppy Cheerleader/Cheer Captain">Preppy Cheerleader/Cheer Captain</option>
-                    <option value="Class Clown">Class Clown</option>
-                    <option value="Rebel Outsider">Rebel Outsider</option>
-                    <option value="Overachieving Student Council President">Overachieving Student Council President</option>
-                </select>
-
-            </div>
-
-            <div class="form-section">
-                <h3>Character Details</h3>
-                <label for="background">Background:</label>
-                <textarea id="background" name="background" rows="4" required></textarea>
-
-                <label for="appearance">Appearance:</label>
-                <textarea id="appearance" name="appearance" rows="4" required></textarea>
-            </div>
-
-            <div class="form-section">
-                <h3>Abilities</h3>
-                <div id="abilities">
-                    <!-- Abilities will be populated dynamically based on the selected class -->
-                </div>
-            </div>
-
-            <!-- Repeat the same structure for other sections -->
-
-            <button type="submit">Create Character</button>
-        </form>
-    </div>
+    <h1>Character Sheet</h1>
+    <form id="characterForm">
+        <label for="charName">Character Name:</label>
+        <input type="text" id="charName" name="charName" required><br><br>
+        
+        <label for="class">Class:</label>
+        <select id="class" name="class" onchange="updateClass()">
+            <option value="nerdyScholar">Nerdy Scholar</option>
+            <option value="athleticJock">Athletic Jock</option>
+            <!-- Add options for other classes -->
+        </select><br><br>
+        
+        <!-- Other input fields for character information -->
+        
+        <button type="button" onclick="levelUp()">Level Up</button>
+    </form>
 
     <script src="script.js"></script>
 </body>
