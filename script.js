@@ -112,46 +112,42 @@ function updateClass() {
     // Update ability scores based on selected class
     switch (selectedClass) {
         case "nerdyScholar":
-            updateAbilityScores({ strength: 12, dexterity: 15, constitution: 13, intelligence: 14, wisdom: 10, charisma: 8 });
+            updateAbilityScores({ strength: 12, dexterity: 15, constitution: 13, intelligence: 14, wisdom: 10, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "athleticJock":
-            updateAbilityScores({ strength: 15, dexterity: 14, constitution: 13, intelligence: 10, wisdom: 12, charisma: 8 });
+            updateAbilityScores({ strength: 15, dexterity: 14, constitution: 13, intelligence: 10, wisdom: 12, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "gothicArtist":
-            updateAbilityScores({ strength: 10, dexterity: 12, constitution: 14, intelligence: 15, wisdom: 13, charisma: 8 });
+            updateAbilityScores({ strength: 10, dexterity: 12, constitution: 14, intelligence: 15, wisdom: 13, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "preppyCheerleader":
-            updateAbilityScores({ strength: 10, dexterity: 14, constitution: 13, intelligence: 12, wisdom: 15, charisma: 8 });
+            updateAbilityScores({ strength: 10, dexterity: 14, constitution: 13, intelligence: 12, wisdom: 15, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "classClown":
-            updateAbilityScores({ strength: 8, dexterity: 14, constitution: 12, intelligence: 10, wisdom: 13, charisma: 15 });
+            updateAbilityScores({ strength: 8, dexterity: 14, constitution: 12, intelligence: 10, wisdom: 13, charisma: 15 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "rebelOutsider":
-            updateAbilityScores({ strength: 12, dexterity: 14, constitution: 15, intelligence: 10, wisdom: 8, charisma: 13 });
+            updateAbilityScores({ strength: 12, dexterity: 14, constitution: 15, intelligence: 10, wisdom: 8, charisma: 13 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
     }
-}
-
-function updateAbilityScores(baseScores) {
-    // Update ability score fields in the form
-    const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
-    abilityFields.forEach(field => {
-        const inputElement = document.getElementById(field);
-        const baseValue = baseScores[field] || 0; // Use base score if available, default to 0 otherwise
-        const bonus = parseInt(inputElement.getAttribute('data-bonus')) || 0; // Get bonus from data attribute, default to 0 otherwise
-        const negative = parseInt(inputElement.getAttribute('data-negative')) || 0; // Get negative from data attribute, default to 0 otherwise
-        inputElement.value = baseValue + bonus + negative;
-    });
-}
-    const bonuses = classDetails[selectedClass].bonuses;
-    const negatives = classDetails[selectedClass].negatives;
-    updateAbilityScores(bonuses, negatives);
-
+    
     // Update skills based on selected class
     updateSkills(selectedClass);
 
     // Update class description and details
     updateClassDetails(selectedClass);
+}
+
+function updateAbilityScores(baseScores, bonuses, negatives) {
+    // Update ability score fields in the form
+    const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
+    abilityFields.forEach(field => {
+        const inputElement = document.getElementById(field);
+        const baseValue = baseScores[field] || 0; // Use base score if available, default to 0 otherwise
+        const bonus = bonuses[field] || 0; // Get bonus from class bonuses, default to 0 otherwise
+        const negative = negatives[field] || 0; // Get negative from class negatives, default to 0 otherwise
+        inputElement.value = baseValue + bonus + negative;
+    });
 }
 
 function updateSkills(selectedClass) {
@@ -168,7 +164,6 @@ function updateSkills(selectedClass) {
         }
     }
 }
-
 
 function updateClassDetails(selectedClass) {
     const description = classDetails[selectedClass].description;
