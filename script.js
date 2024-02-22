@@ -187,23 +187,6 @@ function levelUp() {
         document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
     }
 }
-// Function to generate PDF of the character sheet
-function generatePDF() {
-    const charName = document.getElementById("charName").value;
-    const characterSheet = document.getElementById("characterForm");
-
-    // Create a new jsPDF instance
-    const pdf = new jsPDF();
-
-    // Convert character sheet HTML to PDF
-    pdf.html(characterSheet, {
-        callback: function (pdf) {
-            // Save PDF with character name as filename
-            pdf.save(`${charName}_CharacterSheet.pdf`);
-        }
-    });
-}
-
 async function generatePDF() {
     const charName = document.getElementById("charName").value;
     const characterSheet = document.getElementById("characterForm");
@@ -239,3 +222,8 @@ function downloadPDF(pdfBytes, fileName) {
     link.download = fileName;
     link.click();
 }
+
+// Event listener for "Save Character" button click
+document.getElementById("saveCharacterBtn").addEventListener("click", function() {
+    generatePDF();
+});
