@@ -107,7 +107,6 @@ const classDetails = {
     }
 };
 
-// Function to handle profile picture upload
 document.getElementById("profileImage").addEventListener("change", function(event) {
     const file = event.target.files[0]; // Get the selected file
 
@@ -118,16 +117,12 @@ document.getElementById("profileImage").addEventListener("change", function(even
         // Convert the selected file to a data URL
         reader.readAsDataURL(file);
         reader.onload = function() {
-            const profileImage = document.createElement("img");
+            const profileImage = document.getElementById("previewImage");
             profileImage.src = reader.result;
-            profileImage.style.width = "150px"; // Set width as needed
-            profileImage.style.height = "150px"; // Set height as needed
-
-            // Clear any existing profile picture
-            const existingProfileImage = document.getElementById("profilePicture");
-            if (existingProfileImage) {
-                existingProfileImage.remove();
-            }
+            profileImage.style.display = "block"; // Display the preview image
+        };
+    }
+});
 
             // Append the new profile picture to the form
             document.getElementById("characterForm").appendChild(profileImage);
