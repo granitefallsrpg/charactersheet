@@ -101,6 +101,7 @@ body {
     flex-basis: 100%; /* Occupy full width */
     display: flex;
     justify-content: flex-end; /* Align to the right */
+    float: right;
 }
 
 .right-section .input-box {
