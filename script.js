@@ -105,10 +105,6 @@ const classDetails = {
         negativeDescription: "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise.\nBurnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations."
     }
 };
-// Event listener for changes to the class select dropdown
-document.getElementById("class").addEventListener("change", function() {
-    updateClass();
-});
 
  function updateClass() {
     const selectedClass = document.getElementById("class").value;
@@ -191,4 +187,31 @@ function levelUp() {
         document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
     }
 }
+async function generatePDF() {
+    const charName = document.getElementById("charName").value;
+    const characterSheet = document.getElementById("characterForm");
 
+    // Create a new jsPDF instance
+    const pdf = new jsPDF();
+
+    // Convert character sheet HTML to PDF
+    await pdf.html(characterSheet, {
+        callback: function(pdf) {
+            // Save PDF with character name as filename
+            pdf.save(`${charName}_CharacterSheet.pdf`);
+        }
+    });
+}
+
+function downloadPDF(pdfBytes, fileName) {
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
+}
+
+// Event listener for "Save Character" button click
+document.getElementById("saveCharacterBtn").addEventListener("click", function() {
+    generatePDF();
+});
