@@ -106,15 +106,15 @@ body {
 
 .right-section .input-box {
     width: 50%; /* Adjust as needed */
-    display: none !important;
+ 
 }
-}
+
 
 #profilePicturePreview {
     margin-right: 20px; /* Add margin to the right */
     margin-left: 0; /* Remove margin from the left */
 }
-}
+
 
 /* Styling for left section */
 .left-section {
