@@ -29,19 +29,15 @@ body {
     margin-bottom: 30px;
 }
 
-.tile {
-    padding: 20px;
+/* Ability scores section */
+.ability-scores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 20px; /* Spacing between columns */
+}
+
+.ability-score {
     margin-bottom: 20px;
-}
-
-.tile h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.tile p {
-    font-size: 16px;
-    line-height: 1.4;
 }
 
 /* Form elements */
@@ -72,3 +68,6 @@ button {
 button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
+
+/* Additional styling specific to D&D character sheet */
+/* You can further customize based on your needs */
