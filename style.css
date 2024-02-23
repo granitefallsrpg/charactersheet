@@ -25,3 +25,21 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.ability-scores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ability-score {
+    flex-basis: calc(50% - 10px); /* Adjust width as needed */
+    margin-bottom: 20px;
+}
+
+.ability-score input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
