@@ -95,16 +95,22 @@ body {
 }
 
 /* Additional styling for profile picture input and preview */
+
+
 .right-section {
-    flex-basis: calc(50% - 10px);
+    flex-basis: 100%; /* Occupy full width */
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
 }
 
 .right-section .input-box {
-    margin-top: 20px;
+    width: 50%; /* Adjust as needed */
 }
 
-.right-section #profilePicturePreview {
-    margin-top: 0;
+#profilePicturePreview {
+    margin-right: 20px; /* Add margin to the right */
+    margin-left: 0; /* Remove margin from the left */
+}
 }
 
 /* Styling for left section */
