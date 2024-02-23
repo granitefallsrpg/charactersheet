@@ -101,12 +101,12 @@ body {
     flex-basis: 100%; /* Occupy full width */
     display: flex;
     justify-content: flex-end; /* Align to the right */
-    float: right;
+    float: right !important;
 }
 
 .right-section .input-box {
     width: 50%; /* Adjust as needed */
-    display: none;
+    display: none !important;
 }
 }
 
@@ -126,5 +126,5 @@ body {
 }
 .right-section #profilePicturePreview {
     margin-top: 0;
-    margin-bottom: 5%;
+    margin-bottom: 5%  !important;
 }
