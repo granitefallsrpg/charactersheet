@@ -13,8 +13,14 @@
     <div class="container">
         <div class="form-container">
             <form id="characterForm">
-                <label for="charName">Character Name:</label>
-                <input type="text" id="charName" name="charName" required><br><br>
+                <div class="char-name-section">
+                    <label for="charName">Character Name:</label>
+                    <input type="text" id="charName" name="charName" required>
+                    <div id="profilePicturePreview" onclick="document.getElementById('profileImage').click()">
+                        <img id="previewImage" src="#" alt="Profile Picture">
+                    </div>
+                    <button id="saveCharacterBtn" type="button">Save Character</button>
+                </div>
                 
                 <div class="flex-container">
                     <div class="form-group">
@@ -65,9 +71,6 @@
                     <div class="input-box">
                         <label for="profileImage">Profile Picture:</label><br>
                         <input type="file" id="profileImage" name="profileImage" accept="image/*">
-                        <div id="profilePicturePreview" onclick="document.getElementById('profileImage').click()">
-                            <img id="previewImage" src="#" alt="Profile Picture">
-                        </div>
                     </div>
                 </div>
                 
@@ -118,7 +121,6 @@
                     <!-- Equipment will be dynamically updated here -->
                 </div>
                 
-                <button id="saveCharacterBtn" type="button">Save Character</button>
             </form>
         </div>
     </div>
