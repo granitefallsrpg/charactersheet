@@ -9,7 +9,7 @@ body {
 .container {
     width: 80%; /* Adjust width as needed */
     max-width: 800px;
-    margin: 50px auto; /* Center container with 50px top margin */
+    margin: 50px auto; /* Center container with 50px top and bottom margin and auto left and right margin */
     padding: 20px;
     border: 2px solid #333; /* Dark gray border */
     border-radius: 10px; /* Rounded corners */
