@@ -1,7 +1,9 @@
 body {
-    background-color: #1a1a1a;
-    color: #ccc;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #000; /* Black text */
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -24,19 +26,53 @@ body {
 }
 
 .tile {
-    background-color: #333;
+    background-color: #fff; /* White background */
     padding: 20px;
     margin-bottom: 20px;
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .tile h2 {
-    color: #fff;
+    color: #000; /* Black text */
     font-size: 24px;
     margin-bottom: 10px;
 }
 
 .tile p {
-    color: #ccc;
+    color: #666; /* Dark gray text */
     font-size: 16px;
     line-height: 1.4;
 }
+
+/* Form elements */
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Additional styling specific to D&D character sheet */
+/* You can further customize based on the provided PDF */
