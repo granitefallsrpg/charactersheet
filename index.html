@@ -9,46 +9,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <h1>Character Sheet</h1>
+    <h1>Character Sheet</h1>
     <div class="container">
         <div class="form-container">
             <form id="characterForm">
                 <label for="charName">Character Name:</label>
                 <input type="text" id="charName" name="charName" required><br><br>
                 
-                <label for="class">Class:</label>
-                <select id="class" name="class" onchange="updateClass()">
-                    <option value="select">Select</option>
-                    <option value="nerdyScholar">Nerdy Scholar</option>
-                    <option value="athleticJock">Athletic Jock</option>
-                    <option value="gothicArtist">Gothic Artist</option>
-                    <option value="preppyCheerleader">Preppy Cheerleader/Cheer Captain</option>
-                    <option value="classClown">Class Clown</option>
-                    <option value="rebelOutsider">Rebel Outsider</option>
-                    <option value="overachievingStudentCouncilPresident">Overachieving StudentCouncil President</option>
-                    <!-- Add options for other classes -->
-                </select><br><br>
+                <div class="flex-container">
+                    <div class="form-group">
+                        <label for="class">Class:</label>
+                        <select id="class" name="class" onchange="updateClass()">
+                            <option value="select">Select</option>
+                            <option value="nerdyScholar">Nerdy Scholar</option>
+                            <option value="athleticJock">Athletic Jock</option>
+                            <option value="gothicArtist">Gothic Artist</option>
+                            <option value="preppyCheerleader">Preppy Cheerleader/Cheer Captain</option>
+                            <option value="classClown">Class Clown</option>
+                            <option value="rebelOutsider">Rebel Outsider</option>
+                            <option value="overachievingStudentCouncilPresident">Overachieving StudentCouncil President</option>
+                            <!-- Add options for other classes -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="level">Level:</label>
+                        <select id="level" name="level" onchange="levelUp()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <!-- Add options for other levels -->
+                        </select>
+                    </div>
+                </div>
                 
-                <label for="level">Level:</label>
-                <select id="level" name="level" onchange="levelUp()">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <!-- Add options for other levels -->
-                </select><br><br>
+                <div class="input-box">
+                    <label for="background">Background:</label><br>
+                    <textarea id="background" name="background" rows="4" cols="50"></textarea>
+                </div>
                 
-                <label for="background">Background:</label><br>
-                <textarea id="background" name="background" rows="4" cols="50"></textarea><br><br>
-                
-                <label for="appearance">Appearance:</label><br>
-                <textarea id="appearance" name="appearance" rows="4" cols="50"></textarea><br><br>
+                <div class="input-box">
+                    <label for="appearance">Appearance:</label><br>
+                    <textarea id="appearance" name="appearance" rows="4" cols="50"></textarea>
+                </div>
                 
                 <div class="ability-scores">
                     <div class="ability-score">
