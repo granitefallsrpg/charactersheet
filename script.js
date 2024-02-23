@@ -130,22 +130,22 @@ document.getElementById("profileImage").addEventListener("change", function(even
     // Update ability scores based on selected class
     switch (selectedClass) {
         case "nerdyScholar":
-            updateAbilityScores({ strength: 12, dexterity: 15, constitution: 13, intelligence: 14, wisdom: 10, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
+            updateAbilityScores({ strength: 1, dexterity: 2, constitution: 1, intelligence: 2, wisdom: 1, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "athleticJock":
-            updateAbilityScores({ strength: 15, dexterity: 14, constitution: 13, intelligence: 10, wisdom: 12, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
+            updateAbilityScores({ strength: 2, dexterity: 2, constitution: 1, intelligence: 1, wisdom: 1, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "gothicArtist":
-            updateAbilityScores({ strength: 10, dexterity: 12, constitution: 14, intelligence: 15, wisdom: 13, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
+            updateAbilityScores({ strength: 1, dexterity: 1, constitution: 2, intelligence: 2, wisdom: 1, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "preppyCheerleader":
-            updateAbilityScores({ strength: 10, dexterity: 14, constitution: 13, intelligence: 12, wisdom: 15, charisma: 8 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
+            updateAbilityScores({ strength: 1, dexterity: 2, constitution: 1, intelligence: 1, wisdom: 2, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "classClown":
-            updateAbilityScores({ strength: 8, dexterity: 14, constitution: 12, intelligence: 10, wisdom: 13, charisma: 15 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
+            updateAbilityScores({ strength: 1, dexterity: 2, constitution: 1, intelligence: 1, wisdom: 1, charisma: 2 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
         case "rebelOutsider":
-            updateAbilityScores({ strength: 12, dexterity: 14, constitution: 15, intelligence: 10, wisdom: 8, charisma: 13 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
+            updateAbilityScores({ strength: 1, dexterity: 2, constitution: 2, intelligence: 1, wisdom: 1, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
     }
     
