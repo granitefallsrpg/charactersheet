@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://storage.googleapis.com/pai-images/1657dec07b274708a4f647c98d5ca44f.jpeg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -19,7 +19,7 @@ h1 {
     padding: 20px;
     border: 2px solid #fcfcfc;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
