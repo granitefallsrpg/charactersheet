@@ -68,6 +68,8 @@ body {
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+/* Styling for profile picture input and preview */
 #profilePictureInput {
     display: none; /* Hide the input */
 }
