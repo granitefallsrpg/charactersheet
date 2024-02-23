@@ -13,76 +13,86 @@
     <div class="container">
         <div class="form-container">
             <form id="characterForm">
-        <label for="charName">Character Name TEST:</label>
-        <input type="text" id="charName" name="charName" required><br><br>
-        
-        <label for="class">Class:</label>
-        <select id="class" name="class" onchange="updateClass()">
-            <option value="select">Select</option>
-            <option value="nerdyScholar">Nerdy Scholar</option>
-            <option value="athleticJock">Athletic Jock</option>
-            <option value="gothicArtist">Gothic Artist</option>
-            <option value="preppyCheerleader">Preppy Cheerleader/Cheer Captain</option>
-            <option value="classClown">Class Clown</option>
-            <option value="rebelOutsider">Rebel Outsider</option>
-            <option value="overachievingStudentCouncilPresident">Overachieving StudentCouncil President</option>
-            <!-- Add options for other classes -->
-        </select><br><br>
-        
-        <label for="level">Level:</label>
-        <select id="level" name="level" onchange="levelUp()">
-            <option value="1">1</option>
-            <option value="2">2</option>
-             <option value="3">3</option>
-             <option value="4">4</option>
-             <option value="5">5</option>
-             <option value="6">6</option>
-             <option value="7">7</option>
-             <option value="8">8</option>
-             <option value="9">9</option>
-             <option value="10">10</option>
-            <!-- Add options for other levels -->
-        </select><br><br>
-        
-        <label for="background">Background:</label><br>
-        <textarea id="background" name="background" rows="4" cols="50"></textarea><br><br>
-        
-        <label for="appearance">Appearance:</label><br>
-        <textarea id="appearance" name="appearance" rows="4" cols="50"></textarea><br><br>
-        
-        <label for="strength">Strength:</label>
-        <input type="text" id="strength" name="strength" readonly><br><br>
-        
-        <label for="dexterity">Dexterity:</label>
-        <input type="text" id="dexterity" name="dexterity" readonly><br><br>
-        
-        <label for="constitution">Constitution:</label>
-        <input type="text" id="constitution" name="constitution" readonly><br><br>
-        
-        <label for="intelligence">Intelligence:</label>
-        <input type="text" id="intelligence" name="intelligence" readonly><br><br>
-        
-        <label for="wisdom">Wisdom:</label>
-        <input type="text" id="wisdom" name="wisdom" readonly><br><br>
-        
-        <label for="charisma">Charisma:</label>
-        <input type="text" id="charisma" name="charisma" readonly><br><br>
-        
-        <div id="skills">
-            <!-- Skills will be dynamically generated here -->
+                <label for="charName">Character Name:</label>
+                <input type="text" id="charName" name="charName" required><br><br>
+                
+                <label for="class">Class:</label>
+                <select id="class" name="class" onchange="updateClass()">
+                    <option value="select">Select</option>
+                    <option value="nerdyScholar">Nerdy Scholar</option>
+                    <option value="athleticJock">Athletic Jock</option>
+                    <option value="gothicArtist">Gothic Artist</option>
+                    <option value="preppyCheerleader">Preppy Cheerleader/Cheer Captain</option>
+                    <option value="classClown">Class Clown</option>
+                    <option value="rebelOutsider">Rebel Outsider</option>
+                    <option value="overachievingStudentCouncilPresident">Overachieving StudentCouncil President</option>
+                    <!-- Add options for other classes -->
+                </select><br><br>
+                
+                <label for="level">Level:</label>
+                <select id="level" name="level" onchange="levelUp()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <!-- Add options for other levels -->
+                </select><br><br>
+                
+                <label for="background">Background:</label><br>
+                <textarea id="background" name="background" rows="4" cols="50"></textarea><br><br>
+                
+                <label for="appearance">Appearance:</label><br>
+                <textarea id="appearance" name="appearance" rows="4" cols="50"></textarea><br><br>
+                
+                <div class="ability-scores">
+                    <div class="ability-score">
+                        <label for="strength">Strength:</label>
+                        <input type="text" id="strength" name="strength" readonly>
+                    </div>
+                    <div class="ability-score">
+                        <label for="dexterity">Dexterity:</label>
+                        <input type="text" id="dexterity" name="dexterity" readonly>
+                    </div>
+                    <div class="ability-score">
+                        <label for="constitution">Constitution:</label>
+                        <input type="text" id="constitution" name="constitution" readonly>
+                    </div>
+                    <div class="ability-score">
+                        <label for="intelligence">Intelligence:</label>
+                        <input type="text" id="intelligence" name="intelligence" readonly>
+                    </div>
+                    <div class="ability-score">
+                        <label for="wisdom">Wisdom:</label>
+                        <input type="text" id="wisdom" name="wisdom" readonly>
+                    </div>
+                    <div class="ability-score">
+                        <label for="charisma">Charisma:</label>
+                        <input type="text" id="charisma" name="charisma" readonly>
+                    </div>
+                </div>
+                
+                <div id="skills">
+                    <!-- Skills will be dynamically generated here -->
+                </div>
+                
+                <div id="classDescription">
+                    <!-- Class description will be dynamically updated here -->
+                </div>
+                
+                <div id="classDetails">
+                    <!-- Class details will be dynamically updated here -->
+                </div>
+                
+                <button id="saveCharacterBtn" type="button">Save Character</button>
+            </form>
         </div>
-        
-        <div id="classDescription">
-            <!-- Class description will be dynamically updated here -->
-        </div>
-        
-        <div id="classDetails">
-            <!-- Class details will be dynamically updated here -->
-        </div>
-        
-       <button id="saveCharacterBtn" type="button">Save Character</button>
-
-    </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
