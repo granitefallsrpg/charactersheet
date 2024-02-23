@@ -187,31 +187,4 @@ function levelUp() {
         document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
     }
 }
-async function generatePDF() {
-    const charName = document.getElementById("charName").value;
-    const characterSheet = document.getElementById("characterForm");
 
-    // Create a new jsPDF instance
-    const pdf = new jsPDF();
-
-    // Convert character sheet HTML to PDF
-    await pdf.html(characterSheet, {
-        callback: function(pdf) {
-            // Save PDF with character name as filename
-            pdf.save(`${charName}_CharacterSheet.pdf`);
-        }
-    });
-}
-
-function downloadPDF(pdfBytes, fileName) {
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
-    const link = document.createElement("a");
-    link.href = window.URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
-}
-
-// Event listener for "Save Character" button click
-document.getElementById("saveCharacterBtn").addEventListener("click", function() {
-    generatePDF();
-});
