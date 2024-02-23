@@ -124,3 +124,7 @@ body {
 .left-section .input-box {
     margin-top: 20px;
 }
+.right-section #profilePicturePreview {
+    margin-top: 0;
+    margin-bottom: 5%;
+}
