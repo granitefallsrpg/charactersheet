@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Sheet</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Character Sheet</h1>
     <form id="characterForm">
-   <label for="charName">Character Name:</label>
+        <label for="charName">Character Name:</label>
         <input type="text" id="charName" name="charName" required><br><br>
         
         <label for="class">Class:</label>
-      <select id="class" name="class">
+        <select id="class" name="class" onchange="updateClass()">
             <option value="select">Select</option>
             <option value="nerdyScholar">Nerdy Scholar</option>
             <option value="athleticJock">Athletic Jock</option>
@@ -30,14 +30,14 @@
         <select id="level" name="level" onchange="levelUp()">
             <option value="1">1</option>
             <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             <option value="9">9</option>
+             <option value="10">10</option>
             <!-- Add options for other levels -->
         </select><br><br>
         
@@ -81,38 +81,6 @@
 
     </form>
 
-    <script>
-        window.jsPDF = window.jspdf.jsPDF; // Window fix
-
-        // Your script.js content here
-        async function generatePDF() {
-            const charName = document.getElementById("charName").value;
-            const characterSheet = document.getElementById("characterForm");
-
-            // Create a new jsPDF instance
-            const pdf = new jsPDF();
-
-            // Convert character sheet HTML to PDF
-            await pdf.html(characterSheet, {
-                callback: function(pdf) {
-                    // Save PDF with character name as filename
-                    pdf.save(`${charName}_CharacterSheet.pdf`);
-                }
-            });
-        }
-
-        function downloadPDF(pdfBytes, fileName) {
-            const blob = new Blob([pdfBytes], { type: "application/pdf" });
-            const link = document.createElement("a");
-            link.href = window.URL.createObjectURL(blob);
-            link.download = fileName;
-            link.click();
-        }
-
-        // Event listener for "Save Character" button click
-        document.getElementById("saveCharacterBtn").addEventListener("click", function() {
-            generatePDF();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
