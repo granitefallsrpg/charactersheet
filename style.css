@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 80%; /* Adjust width as needed */
+    width: 80% !important; /* Adjust width as needed */
     max-width: 800px;
     margin: 50px auto; /* Center container with 50px top and bottom margin and auto left and right margin */
     padding: 20px;
@@ -15,7 +15,9 @@ body {
     border-radius: 10px; /* Rounded corners */
     background-color: #fff; /* White background */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
+
 
 .title {
     text-align: center;
