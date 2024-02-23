@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://img.freepik.com/free-vector/sunrise-mountain-concept-illustration_114360-17674.jpg?w=1380&t=st=1708674784~exp=1708675384~hmac=503e06aca67a92e15c3263810004770d78ce8b518737dd6a6cc8da23a8e1c907'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-image: url('https://storage.googleapis.com/pai-images/1657dec07b274708a4f647c98d5ca44f.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover; /* Cover the entire background */
     background-repeat: no-repeat; /* Prevent the background from repeating */
     background-position: center; /* Center the background image */
