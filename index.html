@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Granite Falls Character Sheet 1</title>
-    <script src="html2canvas.min.js"></script>
-    <script src="jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,8 +14,14 @@
                 <div class="char-name-section">
                     <label for="charName">Character Name:</label>
                     <input type="text" id="charName" name="charName" required>
-                    <div id="profilePicturePreview" onclick="document.getElementById('profileImage').click()">
-                        <img id="previewImage" src="#" alt="Profile Picture">
+                    <div class="right-section">
+                        <div class="input-box">
+                            <label for="profileImage">Profile Picture:</label><br>
+                            <input type="file" id="profileImage" name="profileImage" accept="image/*">
+                        </div>
+                        <div id="profilePicturePreview" onclick="document.getElementById('profileImage').click()">
+                            <img id="previewImage" src="#" alt="Profile Picture">
+                        </div>
                     </div>
                 </div>
                 
@@ -63,13 +67,6 @@
                     <div class="input-box">
                         <label for="appearance">Appearance:</label><br>
                         <textarea id="appearance" name="appearance" rows="4" cols="50"></textarea>
-                    </div>
-                </div>
-                
-                <div class="right-section">
-                    <div class="input-box">
-                        <label for="profileImage">Profile Picture:</label><br>
-                        <input type="file" id="profileImage" name="profileImage" accept="image/*">
                     </div>
                 </div>
                 
@@ -122,7 +119,7 @@
                 
             </form>
         </div>
-                     <button id="saveCharacterBtn" type="button">Save Character</button>
+        <button id="saveCharacterBtn" type="button">Save Character</button>
     </div>
 
     <script src="script.js"></script>
