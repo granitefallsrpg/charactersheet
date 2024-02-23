@@ -1,13 +1,14 @@
 body {
-    background-image: url('https://storage.googleapis.com/pai-images/1657dec07b274708a4f647c98d5ca44f.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-    background-size: cover; /* Cover the entire background */
-    background-repeat: no-repeat; /* Prevent the background from repeating */
-    background-position: center; /* Center the background image */
-    color: #333; /* Dark gray text */
+    background-image: url('https://storage.googleapis.com/pai-images/1657dec07b274708a4f647c98d5ca44f.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #333;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
+
 .container {
     width: 80%;
     max-width: 800px;
@@ -25,6 +26,30 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group {
+    flex-basis: calc(50% - 10px);
+}
+
+.input-box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-box textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
 .ability-scores {
     display: flex;
     flex-wrap: wrap;
@@ -32,7 +57,7 @@ body {
 }
 
 .ability-score {
-    flex-basis: calc(50% - 10px); /* Adjust width as needed */
+    flex-basis: calc(50% - 10px);
     margin-bottom: 20px;
 }
 
