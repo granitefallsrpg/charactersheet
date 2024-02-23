@@ -120,9 +120,6 @@ document.getElementById("profileImage").addEventListener("change", function(even
             const profileImage = document.getElementById("previewImage");
             profileImage.src = reader.result;
             profileImage.style.display = "block"; // Display the preview image
-        };
-    }
-});
 
             // Append the new profile picture to the form
             document.getElementById("characterForm").appendChild(profileImage);
