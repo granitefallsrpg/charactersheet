@@ -30,7 +30,7 @@ body {
 .flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Updated to align items at the top */
 }
 
 .form-group {
@@ -85,7 +85,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    float: right; /* Adjusted for positioning */
+    /* float: right; Removed float */
+    /* Added margin-left to create space */
+    margin-left: 20px;
 }
 
 #profilePicturePreview img {
