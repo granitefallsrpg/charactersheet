@@ -95,4 +95,18 @@ body {
     max-height: 100%;
     border-radius: 5px;
 }
+
+/* Additional styling for profile picture input and preview */
+.right-section {
+    flex-basis: calc(50% - 10px);
+}
+
+.right-section .input-box {
+    margin-top: 20px;
+}
+
+.right-section #profilePicturePreview {
+    margin-top: 0;
+}
+
  
