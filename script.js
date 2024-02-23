@@ -1,3 +1,4 @@
+window.jsPDF = window.jspdf.jsPDF;
 const classDetails = {
     nerdyScholar: {
         bonuses: {
