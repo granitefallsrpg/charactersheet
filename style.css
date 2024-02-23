@@ -9,14 +9,14 @@ body {
     padding: 0;
 }
 
-.container {
+container {
     width: 80%;
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    border: 2px solid #333;
+    border: 2px solid #fcfcfc;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 1.0); /* Adjust the alpha value as needed */
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
