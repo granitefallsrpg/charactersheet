@@ -106,6 +106,8 @@ body {
 
 .right-section .input-box {
     width: 50%; /* Adjust as needed */
+    display: none;
+}
 }
 
 #profilePicturePreview {
