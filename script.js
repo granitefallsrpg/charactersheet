@@ -165,6 +165,59 @@ document.getElementById("profileImage").addEventListener("change", function(even
 
     // Update class description and details
     updateClassDetails(selectedClass);
+
+    // Update combat information based on selected class
+    updateCombatInfo(selectedClass);
+
+    // Update equipment based on selected class
+    updateEquipment(selectedClass);
+}
+function updateCombatInfo(selectedClass) {
+    const combatInfoContainer = document.getElementById("combatInfo");
+    combatInfoContainer.innerHTML = "<h3>Combat Information</h3>";
+
+    // Generate combat information based on selected class
+    const combatInfo = generateCombatInfo(selectedClass);
+
+    // Display combat information
+    combatInfoContainer.innerHTML += `<p>${combatInfo}</p>`;
+}
+
+function updateEquipment(selectedClass) {
+    const equipmentContainer = document.getElementById("equipment");
+    equipmentContainer.innerHTML = "<h3>Equipment</h3>";
+
+    // Generate equipment based on selected class
+    const equipment = generateEquipment(selectedClass);
+
+    // Display equipment
+    equipmentContainer.innerHTML += `<p>${equipment}</p>`;
+}
+
+function generateCombatInfo(selectedClass) {
+    // Generate combat information based on class stereotype
+    switch (selectedClass) {
+        case "nerdyScholar":
+            return "Combat Information for Nerdy Scholar: Prefers to avoid physical confrontations, relying on intelligence and knowledge.";
+        case "athleticJock":
+            return "Combat Information for Athletic Jock: Excels in physical combat, utilizing strength and athleticism.";
+        // Add cases for other classes...
+        default:
+            return "No combat information available.";
+    }
+}
+
+function generateEquipment(selectedClass) {
+    // Generate equipment based on class stereotype
+    switch (selectedClass) {
+        case "nerdyScholar":
+            return "Equipment for Nerdy Scholar: Books, research materials, scientific gadgets.";
+        case "athleticJock":
+            return "Equipment for Athletic Jock: Sports gear, gym equipment, team jersey.";
+        // Add cases for other classes...
+        default:
+            return "No equipment available.";
+    }
 }
 function updateAbilityScores(baseScores, bonuses, negatives) {
     // Update ability score fields in the form
