@@ -191,29 +191,16 @@ async function generatePDF() {
     const charName = document.getElementById("charName").value;
     const characterSheet = document.getElementById("characterForm");
 
-    // Create a new PDF document
-    const { PDFDocument } = PDFLib;
-    const pdfDoc = await PDFDocument.create();
-    const page = pdfDoc.addPage();
+    // Create a new jsPDF instance
+    const pdf = new jsPDF();
 
-    // Convert character sheet HTML to image
-    const pdfContent = characterSheet.innerHTML;
-    const imageDataUri = await htmlToImage.toPng(pdfContent);
-    const imageBytes = await fetch(imageDataUri).then((res) => res.arrayBuffer());
-
-    // Embed image into the PDF page
-    const image = await pdfDoc.embedPng(imageBytes);
-    const imageSize = image.scale(0.75);
-    page.drawImage(image, {
-        x: 50,
-        y: page.getHeight() - imageSize.height - 50,
-        width: imageSize.width,
-        height: imageSize.height,
+    // Convert character sheet HTML to PDF
+    await pdf.html(characterSheet, {
+        callback: function(pdf) {
+            // Save PDF with character name as filename
+            pdf.save(`${charName}_CharacterSheet.pdf`);
+        }
     });
-
-    // Save PDF with character name as filename
-    const pdfBytes = await pdfDoc.save();
-    downloadPDF(pdfBytes, `${charName}_CharacterSheet.pdf`);
 }
 
 function downloadPDF(pdfBytes, fileName) {
