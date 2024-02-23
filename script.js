@@ -105,6 +105,10 @@ const classDetails = {
         negativeDescription: "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise.\nBurnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations."
     }
 };
+// Event listener for changes to the class select dropdown
+document.getElementById("class").addEventListener("change", function() {
+    updateClass();
+});
 
  function updateClass() {
     const selectedClass = document.getElementById("class").value;
