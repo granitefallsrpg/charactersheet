@@ -30,7 +30,7 @@ body {
 .flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Updated to align items at the top */
+    align-items: flex-start;
 }
 
 .form-group {
@@ -85,8 +85,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* float: right; Removed float */
-    /* Added margin-left to create space */
     margin-left: 20px;
 }
 
@@ -108,6 +106,7 @@ body {
 .right-section #profilePicturePreview {
     margin-top: 0;
 }
+
 /* Styling for left section */
 .left-section {
     flex-basis: calc(50% - 10px);
@@ -116,4 +115,3 @@ body {
 .left-section .input-box {
     margin-top: 20px;
 }
- 
