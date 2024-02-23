@@ -108,5 +108,12 @@ body {
 .right-section #profilePicturePreview {
     margin-top: 0;
 }
+/* Styling for left section */
+.left-section {
+    flex-basis: calc(50% - 10px);
+}
 
+.left-section .input-box {
+    margin-top: 20px;
+}
  
