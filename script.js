@@ -421,6 +421,8 @@ function levelUp() {
 }
 async function generatePDF() {
     const charName = document.getElementById("charName").value;
+    const background = document.getElementById("background").value;
+    const appearance = document.getElementById("appearance").value;
     const characterSheet = document.getElementById("characterForm");
 
     // Create a new jsPDF instance
@@ -430,20 +432,21 @@ async function generatePDF() {
     const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Background image link
     pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
 
-    // Get HTML content dimensions
-    const contentWidth = characterSheet.offsetWidth;
-    const contentHeight = characterSheet.offsetHeight;
+    // Add content of background and appearance text areas
+    pdf.text(background, 50, 100); // Adjust position as needed
+    pdf.text(appearance, 50, 200); // Adjust position as needed
 
-    // Position HTML content at center of PDF page
-    const marginLeft = (pdf.internal.pageSize.getWidth() - contentWidth) / 2;
-    const marginTop = (pdf.internal.pageSize.getHeight() - contentHeight) / 2;
-
-    // Add HTML content to PDF
+    // Convert character sheet HTML to PDF
     await pdf.html(characterSheet, {
-        x: marginLeft,
-        y: marginTop,
         html2canvas: { scale: 0.5 }, // Adjust scale if needed for better quality
-        callback: function() {
+        callback: function(pdf) {
+            // Add page break after Appearance section
+            pdf.addPage();
+            // Add page break after Skills section
+            pdf.addPage();
+            // Add page break after Combat Information section
+            pdf.addPage();
+
             // Save PDF with character name as filename
             pdf.save(`${charName}_CharacterSheet.pdf`);
         }
