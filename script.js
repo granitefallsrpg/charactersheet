@@ -231,25 +231,25 @@ function generateSkills(selectedClass, selectedLevel) {
      let skills = "<div>Standard Skills:</div>";
     switch (selectedClass) {
         case "nerdyScholar":
-            skills += "- Researcher: Scholars excel in academic pursuits, gaining proficiency in various fields of study and knowledge-based skills. They rely on intellect and strategy to overcome challenges, utilizing their vast repository of knowledge to outsmart opponents.";
+            skills += "- Researcher: Scholars excel in academic pursuits, gaining proficiency in various fields of study and knowledge-based skills. They rely on intellect and strategy to overcome challenges, utilizing their vast repository of knowledge to outsmart opponents.<br>";
             break;
         case "athleticJock":
-            skills += "- Athlete: Jocks are masters of physical prowess, specializing in combat techniques and athletic feats. They rely on strength, speed, and agility to overcome obstacles, charging into battle with unmatched ferocity and determination.";
+            skills += "- Athlete: Jocks are masters of physical prowess, specializing in combat techniques and athletic feats. They rely on strength, speed, and agility to overcome obstacles, charging into battle with unmatched ferocity and determination.<br>";
             break;
         case "gothicArtist":
-            skills += "- Occultist: Gothic Artists harness the power of darkness, wielding arcane spells and rituals to manipulate the battlefield. They tap into their inner darkness to cast potent spells and summon shadowy allies, creating an aura of fear and mystique.";
+            skills += "- Occultist: Gothic Artists harness the power of darkness, wielding arcane spells and rituals to manipulate the battlefield. They tap into their inner darkness to cast potent spells and summon shadowy allies, creating an aura of fear and mystique.<br>";
             break;
         case "preppyCheerleader":
-            skills += "- Inspirer: Preppy Cheerleaders inspire allies with their unwavering optimism and infectious enthusiasm. They boost team morale with inspiring speeches and strategic maneuvers, leading their comrades to victory through sheer charisma and determination.";
+            skills += "- Inspirer: Preppy Cheerleaders inspire allies with their unwavering optimism and infectious enthusiasm. They boost team morale with inspiring speeches and strategic maneuvers, leading their comrades to victory through sheer charisma and determination.<br>";
             break;
         case "classClown":
-            skills += "- Trickster: Class Clowns are masters of deception and misdirection, using humor and wit to confound enemies. They excel at improvisation and unpredictability, turning the tide of battle with their comedic antics and clever tricks.";
+            skills += "- Trickster: Class Clowns are masters of deception and misdirection, using humor and wit to confound enemies. They excel at improvisation and unpredictability, turning the tide of battle with their comedic antics and clever tricks.<br>";
             break;
         case "rebelOutsider":
-            skills += "- Guerrilla: Rebel Outsiders thrive on chaos and unpredictability, utilizing guerrilla tactics and hit-and-run strategies to outmaneuver opponents. They are experts at sabotage and subterfuge, striking from the shadows with lethal precision.";
+            skills += "- Guerrilla: Rebel Outsiders thrive on chaos and unpredictability, utilizing guerrilla tactics and hit-and-run strategies to outmaneuver opponents. They are experts at sabotage and subterfuge, striking from the shadows with lethal precision.<br>";
             break;
         case "overachievingStudentCouncilPresident":
-            skills += "- Leader: Student Council Presidents lead by example, inspiring allies with their strategic brilliance and unwavering resolve. They coordinate battlefield maneuvers with precision and efficiency, turning the tide of battle through sheer determination.";
+            skills += "- Leader: Student Council Presidents lead by example, inspiring allies with their strategic brilliance and unwavering resolve. They coordinate battlefield maneuvers with precision and efficiency, turning the tide of battle through sheer determination.<br>";
             break;
         default:
             skills += "- No specific skills available.";
@@ -265,21 +265,27 @@ function generateSkills(selectedClass, selectedLevel) {
                 break;
             case "athleticJock":
                 skills += "- Tactical Athlete: Utilizing their knowledge of opponents' movements and weaknesses, the Athletic Jock can analyze foes during combat. Once successfully grappling an opponent, they gain advantage on subsequent attack rolls against that enemy, representing their ability to exploit vulnerabilities.";
+               skills += "<br>- Equipment - Reinforced Sports Gear: This upgraded sports equipment offers increased durability and protection without compromising mobility. It provides additional AC and resistance against physical damage, making the Jock more resilient in combat.<br>";
                 break;
             case "gothicArtist":
                 skills += "- Dark Conjurer: The Gothic Artist taps into their mystical abilities to summon minor shadow creatures once per day. These creatures can aid in combat by attacking enemies or providing assistance to allies, adding an extra layer of versatility to the Artist's arsenal.";
+                skills += "<br>- Equipment - Mystic Talisman: An enchanted amulet imbued with dark energies, the Mystic Talisman enhances the Artist's spellcasting abilities and provides resistance against necrotic damage. It amplifies the potency of dark spells and offers protection against attacks fueled by negative energy.<br>";
                 break;
             case "preppyCheerleader":
                 skills += "- Inspiring Presence: Through an empowering pep talk, the Preppy Cheerleader boosts the morale of their allies. Once per short rest, they can grant temporary hit points to nearby allies equal to their Charisma modifier, inspiring them to push through adversity.";
+                skills += "<br>- Equipment - Leadership Megaphone: This magical megaphone enhances the Cheerleader's voice, imbuing their words with charismatic power. It amplifies the effects of their inspirational speeches, providing bonuses to Charisma-based checks and saving throws for allies within range.<br>";
                 break;
             case "classClown":
                 skills += "- Master of Distraction: Using humor and antics, the Class Clown distracts enemies, imposing disadvantage on attack rolls against allies within 10 feet. By creating chaos and confusion on the battlefield, they disrupt enemy focus and protect their comrades from harm.";
+                skills += "<br>- Equipment - Prankster's Bag of Tricks: Filled with an assortment of comedic gadgets and illusions, this bag enhances the Clown's ability to sow chaos. From blinding smoke bombs to illusory duplicates, these tools provide versatile options for confounding foes and turning the tide of battle.<br>";
                 break;
             case "rebelOutsider":
                 skills += "- Guerrilla Tactics: The Rebel Outsider specializes in guerrilla warfare, setting up traps and ambushes with greater efficiency. Once per combat encounter, they can double the damage of their sneak attacks, catching enemies off-guard and dealing devastating blows.";
-                break;
+               skills += "<br>- Equipment - Stealth Cloak: Woven with enchanted fibers, this cloak grants the Rebel advantage on Dexterity (Stealth) checks and allows them to blend seamlessly into shadows. It enhances their stealth capabilities, enabling them to move undetected and strike from the shadows with lethal precision.<br>";
+             break;
             case "overachievingStudentCouncilPresident":
                 skills += "- Strategic Planner: With unparalleled strategic acumen, the Student Council President can devise tactical battle plans on the fly. By coordinating battlefield maneuvers with precision, they grant allies advantage on initiative rolls and increased movement speed during the first round of combat.";
+                skills += "<br>- Equipment - Leadership Sash: Adorned with symbols of authority, this prestigious sash commands respect and instills confidence in allies. It enhances the President's leadership abilities, providing bonuses to Charisma-based checks and saving throws, and serves as a symbol of inspiration on the battlefield.<br>";
                 break;
             default:
                 skills += "- No additional skills available.";
