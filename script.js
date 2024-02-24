@@ -238,8 +238,10 @@ function updateSkills(selectedClass) {
 function updateClassDetails(selectedClass) {
     const description = classDetails[selectedClass].description;
     const details = classDetails[selectedClass].details;
-    document.getElementById("classDescription").textContent = description;
-    document.getElementById("classDetails").textContent = details;
+    const negativeDescription = classDetails[selectedClass].negativeDescription; // Add this line to get the negative description
+    const fullDescription = `${description}\n\n${details}\n\nNegative Traits:\n${negativeDescription}`; // Concatenate the negative description with other details
+
+    document.getElementById("classDescription").textContent = fullDescription;
 }
 
 function levelUp() {
