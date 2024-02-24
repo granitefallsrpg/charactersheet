@@ -330,7 +330,8 @@ function updateAbilityScores(baseScores, bonuses, negatives) {
     });
 }
 
-function updateSkills(selectedClass) {
+function updateSkills(selectedClass, selectedLevel) {
+    const skills = generateSkills(selectedClass, selectedLevel);
     const skills = classDetails[selectedClass].skills;
     const skillsContainer = document.getElementById("skills");
     skillsContainer.innerHTML = "<h3>Skills</h3>";
