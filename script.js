@@ -186,19 +186,19 @@ function updateEquipment(selectedClass) {
 function generateCombatInfo(selectedClass) {
     switch (selectedClass) {
         case "nerdyScholar":
-            return "Combat Information for Scholar: Prefers to avoid physical confrontations, relying on intelligence and knowledge. In combat, Scholars utilize their intellect to outmaneuver opponents, focusing on strategic positioning and exploiting weaknesses.";
+            return "Combat Information for Scholar: Prefers to avoid physical confrontations, relying on intelligence and knowledge. In combat, Scholars utilize their intellect to outmaneuver opponents, focusing on strategic positioning and exploiting weaknesses. They possess a vast array of academic knowledge, allowing them to identify weaknesses in their enemies and exploit them effectively.";
         case "athleticJock":
-            return "Combat Information for Athlete: Excels in physical combat, utilizing strength and athleticism. Athletes charge into battle with raw power, relying on brute force and endurance to overpower foes.";
+            return "Combat Information for Athlete: Excels in physical combat, utilizing strength and athleticism. Athletes charge into battle with raw power, relying on brute force and endurance to overpower foes. They are highly trained in various combat techniques, such as grappling and hand-to-hand combat, making them formidable opponents in close-quarters combat.";
         case "gothicArtist":
-            return "Combat Information for Gothic Artist: Masters of the mystical arts, Gothic Artists wield dark powers to manipulate the battlefield. They channel their inner turmoil into potent spells, weaving shadows and illusions to confound enemies.";
+            return "Combat Information for Gothic Artist: Masters of the mystical arts, Gothic Artists wield dark powers to manipulate the battlefield. They channel their inner turmoil into potent spells, weaving shadows and illusions to confound enemies. Gothic Artists possess a deep understanding of the occult and are adept at manipulating dark energies to unleash devastating spells upon their enemies.";
         case "preppyCheerleader":
-            return "Combat Information for Preppy Cheerleader: Inspires allies with unwavering optimism and strategic planning. Preppy Cheerleaders boost team morale with inspiring speeches and tactical maneuvers, turning the tide of battle with charisma and cunning.";
+            return "Combat Information for Preppy Cheerleader: Inspires allies with unwavering optimism and strategic planning. Preppy Cheerleaders boost team morale with inspiring speeches and tactical maneuvers, turning the tide of battle with charisma and cunning. They are skilled in rallying their allies and coordinating attacks, making them invaluable leaders on the battlefield.";
         case "classClown":
-            return "Combat Information for Class Clown: Masters of deception and misdirection, Class Clowns use humor to disarm foes and sow chaos on the battlefield. They distract enemies with witty banter and comedic antics, creating openings for allies to strike.";
+            return "Combat Information for Class Clown: Masters of deception and misdirection, Class Clowns use humor to disarm foes and sow chaos on the battlefield. They distract enemies with witty banter and comedic antics, creating openings for allies to strike. Class Clowns are highly unpredictable and excel at improvisation, making them unpredictable adversaries.";
         case "rebelOutsider":
-            return "Combat Information for Rebel Outsider: Thrives on unpredictability and unconventional tactics, Rebel Outsiders catch enemies off-guard with guerrilla warfare and hit-and-run tactics. They embrace chaos and disorder, turning the tide of battle through sheer audacity.";
+            return "Combat Information for Rebel Outsider: Thrives on unpredictability and unconventional tactics, Rebel Outsiders catch enemies off-guard with guerrilla warfare and hit-and-run tactics. They embrace chaos and disorder, turning the tide of battle through sheer audacity. Rebel Outsiders are experts at guerrilla tactics, utilizing stealth and surprise to outmaneuver their opponents.";
         case "overachievingStudentCouncilPresident":
-            return "Combat Information for Overachieving Student Council President: Natural-born leaders, Student Council Presidents inspire allies with tactical precision and strategic planning. They coordinate battlefield maneuvers with efficiency and poise, leading their team to victory through sheer determination.";
+            return "Combat Information for Overachieving Student Council President: Natural-born leaders, Student Council Presidents inspire allies with tactical precision and strategic planning. They coordinate battlefield maneuvers with efficiency and poise, leading their team to victory through sheer determination. Student Council Presidents possess exceptional organizational skills and are adept at coordinating complex strategies in the heat of battle.";
         default:
             return "No combat information available.";
     }
@@ -207,23 +207,24 @@ function generateCombatInfo(selectedClass) {
 function generateEquipment(selectedClass) {
     switch (selectedClass) {
         case "nerdyScholar":
-            return "Equipment for Scholar: Books, research materials, scientific gadgets. Scholars equip themselves with knowledge and tools, relying on intellect rather than brute force.";
+            return "Equipment for Scholar: Books, research materials, scientific gadgets. Scholars equip themselves with knowledge and tools, relying on intellect rather than brute force. They may also carry specialized equipment such as analytical devices and protective gear designed for field research.";
         case "athleticJock":
-            return "Equipment for Athlete: Sports gear, gym equipment, team jersey. Athletes gear up for battle with athletic equipment, ready to charge into the fray with strength and agility.";
+            return "Equipment for Athlete: Sports gear, gym equipment, team jersey. Athletes gear up for battle with athletic equipment, ready to charge into the fray with strength and agility. They often carry specialized sports equipment that can be repurposed for combat, such as weighted training vests and agility-enhancing footwear.";
         case "gothicArtist":
-            return "Equipment for Gothic Artist: Art supplies, ritualistic items, occult artifacts. Gothic Artists arm themselves with dark relics and arcane symbols, channeling their inner darkness into powerful spells.";
+            return "Equipment for Gothic Artist: Art supplies, ritualistic items, occult artifacts. Gothic Artists arm themselves with dark relics and arcane symbols, channeling their inner darkness into powerful spells. They may also carry ritualistic items and artifacts imbued with mystical energies to enhance their spellcasting abilities.";
         case "preppyCheerleader":
-            return "Equipment for Preppy Cheerleader: Pom-poms, megaphone, team banner. Preppy Cheerleaders inspire allies with cheerful accessories and team spirit, boosting morale on the battlefield.";
+            return "Equipment for Preppy Cheerleader: Pom-poms, megaphone, team banner. Preppy Cheerleaders inspire allies with cheerful accessories and team spirit, boosting morale on the battlefield. They often carry accessories that symbolize team unity and spirit, such as team banners and colorful pom-poms.";
         case "classClown":
-            return "Equipment for Class Clown: Jester hat, prank gadgets, comedy props. Class Clowns equip themselves with humorous gadgets and witty repartee, using laughter as their greatest weapon.";
+            return "Equipment for Class Clown: Jester hat, prank gadgets, comedy props. Class Clowns equip themselves with humorous gadgets and witty repartee, using laughter as their greatest weapon. They may also carry a variety of prank gadgets and props designed to distract and confuse their opponents.";
         case "rebelOutsider":
-            return "Equipment for Rebel Outsider: Stealth gear, improvised weapons, rebellion insignia. Rebel Outsiders arm themselves with makeshift weapons and symbols of defiance, embracing their role as agents of chaos.";
+            return "Equipment for Rebel Outsider: Stealth gear, improvised weapons, rebellion insignia. Rebel Outsiders arm themselves with makeshift weapons and symbols of defiance, embracing their role as agents of chaos. They often carry lightweight and easily concealable weapons, as well as insignia and symbols representing their rebellious nature.";
         case "overachievingStudentCouncilPresident":
-            return "Equipment for Student Council President: Planner, organizational tools, leadership badge. Student Council Presidents equip themselves with tools of command and authority, leading their team with efficiency and resolve.";
+            return "Equipment for Student Council President: Planner, organizational tools, leadership badge. Student Council Presidents equip themselves with tools of command and authority, leading their team with efficiency and resolve. They often carry organizational tools such as planners and communication devices, as well as badges or insignia symbolizing their leadership status.";
         default:
             return "No equipment available.";
     }
 }
+
 function updateAbilityScores(baseScores, bonuses, negatives) {
     // Update ability score fields in the form
     const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
