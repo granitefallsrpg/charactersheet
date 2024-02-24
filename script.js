@@ -440,6 +440,16 @@ async function generatePDF() {
     await pdf.html(characterSheet, {
         html2canvas: { scale: 0.5 }, // Adjust scale if needed for better quality
         callback: function(pdf) {
+            // Get HTML content dimensions
+            const contentWidth = characterSheet.offsetWidth;
+            const contentHeight = characterSheet.offsetHeight;
+
+            // Calculate position to center content horizontally
+            const marginLeft = (pdf.internal.pageSize.getWidth() - contentWidth) / 2;
+
+            // Position HTML content at calculated horizontal center and at the top of the page
+            pdf.fromHTML(characterSheet, marginLeft, 50); // Adjust vertical position as needed
+
             // Add page break after Appearance section
             pdf.addPage();
             // Add page break after Skills section
