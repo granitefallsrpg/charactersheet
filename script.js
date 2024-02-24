@@ -337,6 +337,18 @@ function updateAbilityScores(baseScores, bonuses, negatives) {
     });
 }
 
+// Add event listeners to class and level selectors
+document.getElementById("class").addEventListener("change", updateSkillsOnChange);
+document.getElementById("level").addEventListener("change", updateSkillsOnChange);
+
+// Function to call updateSkills when class or level is changed
+function updateSkillsOnChange() {
+    const selectedClass = document.getElementById("class").value;
+    const selectedLevel = parseInt(document.getElementById("level").value);
+    updateSkills(selectedClass, selectedLevel);
+}
+
+// Function to update skills based on selected class and level
 function updateSkills(selectedClass, selectedLevel) {
     const skills = generateSkills(selectedClass, selectedLevel); // Generate skills based on selected class and level
     const skillsContainer = document.getElementById("skills");
