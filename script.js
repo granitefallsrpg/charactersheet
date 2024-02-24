@@ -407,6 +407,7 @@ function levelUp() {
 
     // Update equipment based on selected class and level
     updateEquipment(selectedClass, selectedLevel);
+}
 
 async function generatePDF() {
     const charName = document.getElementById("charName").value;
