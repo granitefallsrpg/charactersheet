@@ -1,85 +1,35 @@
 window.jsPDF = window.jspdf.jsPDF; 
 const classDetails = {
     nerdyScholar: {
-        bonuses: {
-            intelligence: 2,
-        },
-        negatives: {
-            charisma: -1,
-        },
-        skills: {
-            bookworm: {
-                description: "Gain a +2 bonus to Intelligence-based skill checks.",
-                effect: "+2 bonus to Intelligence-based skill checks."
-            },
-            researcher: {
-                description: "Can spend extra time studying to gain advantage on Knowledge-based skill checks.",
-                effect: "Can spend extra time studying to gain advantage on Knowledge-based skill checks."
-            }
-        },
-        equipment: {
-            1: {
-                items: ["Books", "Research materials", "Scientific gadgets"],
-                description: "Basic tools for studying and conducting research."
-            },
-            5: {
-                items: ["Enhanced study materials", "Portable laboratory kit"],
-                description: "Upgraded study materials and a portable laboratory kit for more advanced experiments."
-            },
-            10: {
-                items: ["Master's thesis", "Advanced research facility access"],
-                description: "A completed master's thesis and access to state-of-the-art research facilities."
-            }
-        },
-        description: "Nerdy Scholars are the epitome of intellect and curiosity, driven by a relentless pursuit of knowledge.",
-        details: "They thrive in academic environments, where their sharp minds unravel complex theories and discover hidden truths. However, their brilliance often isolates them from social circles, leading to awkward interactions and overthinking.",
-        negativeDescription: "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations, as their intellectual prowess overshadows their social grace.\nOverthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls as they analyze every possible outcome.",
-        combatSkills: {
-            1: "Analytical Strike (Rank 1): Delivers a precise strike exploiting the opponent's weaknesses, dealing 1d6 extra damage.",
-            5: "Eureka Moment (Rank 1): Has a sudden insight during combat, granting advantage on the next Intelligence-based skill check or saving throw.",
-            10: "Genius Tactics (Rank 1): Devises a brilliant strategy, allowing allies within 30 feet to add Intelligence modifier to attack rolls for 1 minute."
-        }
+    bonuses: {
+        intelligence: 2,
     },
-    athleticJock: {
-        bonuses: {
-            strength: 2,
-        },
-        negatives: {
-            charisma: -1,
-        },
-        skills: {
-            athleticProwess: {
-                description: "Gain a +2 bonus to Strength-based skill checks.",
-                effect: "+2 bonus to Strength-based skill checks."
-            },
-            teamPlayer: {
-                description: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks.",
-                effect: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks."
-            }
-        },
-        equipment: {
-            1: {
-                items: ["Sports gear", "Gym equipment", "Team jersey"],
-                description: "Basic sports equipment for training and competitions."
-            },
-            5: {
-                items: ["Enhanced sports equipment", "Protein supplements"],
-                description: "Upgraded sports gear and protein supplements for improved performance."
-            },
-            10: {
-                items: ["Advanced training gear", "Championship trophy (aesthetic)"],
-                description: "Cutting-edge training gear and a championship trophy as a symbol of achievement."
-            }
-        },
-        description: "Athletic Jocks are the powerhouse of physical prowess, dominating sports arenas and rallying their teams to victory.",
-        details: "They excel in competitive sports, where their strength and agility shine brightest. However, their competitive nature can lead to a short temper and overconfidence.",
-        negativeDescription: "Short Temper: -1 penalty to Charisma-based skill checks when faced with opposition or conflict, as their competitive spirit fuels impulsive reactions.\nOverconfidence: May underestimate opponents, resulting in a -1 penalty to AC when in combat, as they rely too heavily on their physical abilities.",
-        combatSkills: {
-            1: "Powerful Strike (Rank 1): Delivers a powerful blow, knocking the target prone on a successful hit.",
-            5: "Adrenaline Rush (Rank 1): Enters a state of heightened adrenaline, gaining advantage on Strength-based checks and saving throws for 1 minute.",
-            10: "Inspiring Presence (Rank 1): Inspires allies within 30 feet, granting them temporary hit points equal to your level + Strength modifier."
-        }
+    negatives: {
+        charisma: -1,
     },
+    skills: {
+        bookworm: "+2 bonus to Intelligence-based skill checks.",
+        researcher: "Can spend extra time studying to gain advantage on Knowledge-based skill checks."
+    },
+    description: "Nerdy Scholars are the epitome of intellect and curiosity, driven by a relentless pursuit of knowledge.",
+    details: "They thrive in academic environments, where their sharp minds unravel complex theories and discover hidden truths. However, their brilliance often isolates them from social circles, leading to awkward interactions and overthinking.",
+    negativeDescription: "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations, as their intellectual prowess overshadows their social grace.\nOverthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls as they analyze every possible outcome."
+},
+athleticJock: {
+    bonuses: {
+        strength: 2,
+    },
+    negatives: {
+        charisma: -1,
+    },
+    skills: {
+        athleticProwess: "+2 bonus to Strength-based skill checks.",
+        teamPlayer: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks."
+    },
+    description: "Athletic Jocks are the powerhouse of physical prowess, dominating sports arenas and rallying their teams to victory.",
+    details: "They excel in competitive sports, where their strength and agility shine brightest. However, their competitive nature can lead to a short temper and overconfidence.",
+    negativeDescription: "Short Temper: -1 penalty to Charisma-based skill checks when faced with opposition or conflict, as their competitive spirit fuels impulsive reactions.\nOverconfidence: May underestimate opponents, resulting in a -1 penalty to AC when in combat, as they rely too heavily on their physical abilities."
+},
 gothicArtist: {
     bonuses: {
         wisdom: 2,
@@ -88,33 +38,8 @@ gothicArtist: {
         charisma: -1,
     },
     skills: {
-        creativeExpression: {
-            description: "Gain a +2 bonus to Wisdom-based skill checks related to artistic endeavors.",
-            effect: "+2 bonus to Wisdom-based skill checks related to artistic endeavors."
-        },
-        mysticAura: {
-            description: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks.",
-            effect: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks."
-        }
-    },
-    equipment: {
-        1: {
-            items: ["Art supplies", "Ritualistic items", "Occult artifacts"],
-            description: "Essential tools for creating art and delving into mystical practices."
-        },
-        5: {
-            items: ["Enchanted paintbrush", "Casting crystals"],
-            description: "Magical implements that enhance artistic abilities and channel arcane energy."
-        },
-        10: {
-            items: ["Cursed artifact", "Dark tapestry"],
-            description: "Forbidden artifacts and ancient relics with unknown powers, imbuing the artist with dark creativity."
-        }
-    },
-    combatSkills: {
-        1: "Shadow Manipulation: Harness shadows to create illusions or obscure vision, granting advantage on Dexterity (Stealth) checks.",
-        5: "Arcane Eruption: Unleash a burst of dark energy that damages and disorients enemies within a radius, forcing them to make a Constitution saving throw or be blinded and deafened for one round.",
-        10: "Eldritch Enchantment: Infuse artwork with mystical energies, bringing it to life as a temporary ally that aids in combat."
+        creativeExpression: "+2 bonus to Wisdom-based skill checks related to artistic endeavors.",
+        mysticAura: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks."
     },
     description: "Gothic Artists are enigmatic souls, channeling their inner darkness into captivating works of art and mystic aura.",
     details: "They find solace in creative expression, where their wisdom and intuition guide their hands to create haunting masterpieces. Yet, their eccentricity may lead to isolation and emotional turmoil.",
@@ -128,33 +53,8 @@ preppyCheerleader: {
         wisdom: -1,
     },
     skills: {
-        charismaticLeader: {
-            description: "Gain a +2 bonus to Charisma-based skill checks when leading or motivating others.",
-            effect: "+2 bonus to Charisma-based skill checks when leading or motivating others."
-        },
-        teamSpirit: {
-            description: "Can inspire allies with pep talks, granting them advantage on saving throws against fear.",
-            effect: "Can inspire allies with pep talks, granting them advantage on saving throws against fear."
-        }
-    },
-    equipment: {
-        1: {
-            items: ["Pom-poms", "Megaphone", "Team banner"],
-            description: "Essential accessories for cheering on teammates and boosting morale."
-        },
-        5: {
-            items: ["Spirit squad uniform", "Energy drinks"],
-            description: "Official team uniform and energy-boosting beverages for enhanced performance."
-        },
-        10: {
-            items: ["Championship ring", "Victory banner"],
-            description: "Symbolic tokens of victory and prestige, representing the cheerleader's success on the field."
-        }
-    },
-    combatSkills: {
-        1: "Cheerful Distraction: Distract enemies with energetic cheers and dazzling routines, imposing disadvantage on their next attack roll.",
-        5: "Inspiring Rally: Boost allies' morale with an inspiring cheer, granting temporary hit points equal to your Charisma modifier.",
-        10: "Victory Dance: Perform a triumphant dance that invigorates allies and demoralizes enemies, granting advantage on attack rolls and saving throws for one round."
+        charismaticLeader: "+2 bonus to Charisma-based skill checks when leading or motivating others.",
+        teamSpirit: "Can inspire allies with pep talks, granting them advantage on saving throws against fear."
     },
     description: "Preppy Cheerleaders are the epitome of charm and enthusiasm, spreading positivity and team spirit wherever they go.",
     details: "They shine as natural leaders, rallying their peers with infectious energy and unwavering optimism. However, their charismatic facade may hide a lack of wisdom, leading to entitled attitudes and susceptibility to peer pressure.",
@@ -168,33 +68,8 @@ classClown: {
         wisdom: -1,
     },
     skills: {
-        naturalEntertainer: {
-            description: "Gain a +2 bonus to Charisma-based skill checks related to comedic performances or social interactions.",
-            effect: "+2 bonus to Charisma-based skill checks related to comedic performances or social interactions."
-        },
-        quickWit: {
-            description: "Can use humor to defuse tense situations, granting advantage on Persuasion checks.",
-            effect: "Can use humor to defuse tense situations, granting advantage on Persuasion checks."
-        }
-    },
-    equipment: {
-        1: {
-            items: ["Jester hat", "Prank gadgets", "Comedy props"],
-            description: "Essential tools for entertaining others and spreading laughter."
-        },
-        5: {
-            items: ["Funny costume", "Whoopee cushion"],
-            description: "Outlandish attire and classic gags to enhance comedic performances."
-        },
-        10: {
-            items: ["Golden kazoo", "Pie cannon"],
-            description: "Legendary artifacts of comedy, capable of delivering uproarious punchlines and epic pranks."
-        }
-    },
-    combatSkills: {
-        1: "Jokester's Jest: Unleash a witty remark or slapstick gag to distract an opponent, imposing disadvantage on their next attack roll.",
-        5: "Prankster's Gambit: Execute a clever prank or practical joke to confuse an enemy, forcing them to make a Wisdom saving throw or be incapacitated with laughter for one round.",
-        10: "Comic Cacophony: Rally allies with a hilarious battle cry or uproarious punchline, granting them advantage on attack rolls and saving throws for one round."
+        naturalEntertainer: "+2 bonus to Charisma-based skill checks related to comedic performances or social interactions.",
+        quickWit: "Can use humor to defuse tense situations, granting advantage on Persuasion checks."
     },
     description: "Class Clowns are the life of the party, wielding their quick wit and infectious charm to entertain and diffuse tension.",
     details: "They thrive on laughter and social interactions, where their charisma and comedic talent shine brightest. Yet, their constant need for attention may lead to attention-seeking behavior and disruptive tendencies.",
@@ -208,33 +83,8 @@ rebelOutsider: {
         charisma: -1,
     },
     skills: {
-        independentThinker: {
-            description: "Gain a +2 bonus to Wisdom-based skill checks when making unconventional decisions.",
-            effect: "+2 bonus to Wisdom-based skill checks when making unconventional decisions."
-        },
-        resistanceToAuthority: {
-            description: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures.",
-            effect: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures."
-        }
-    },
-    equipment: {
-        1: {
-            items: ["Stealth gear", "Improvised weapons", "Rebellion insignia"],
-            description: "Tools of defiance and rebellion, allowing the outsider to navigate society on their own terms."
-        },
-        5: {
-            items: ["Anarchist's manifesto", "Protest signs"],
-            description: "Literature and symbols of dissent, inspiring others to challenge the status quo."
-        },
-        10: {
-            items: ["Revolutionary banner", "Mask of anonymity"],
-            description: "Icons of revolution and anonymity, empowering the rebel to lead the charge for change."
-        }
-    },
-    combatSkills: {
-        1: "Guerrilla Tactics: Utilize hit-and-run tactics and surprise attacks to gain advantage on your first attack roll in combat.",
-        5: "Defiance Stance: Assume a defiant posture that grants resistance to damage from the next attack received.",
-        10: "Revolutionary Fury: Channel the spirit of rebellion to inspire allies, granting them temporary hit points equal to your Wisdom modifier."
+        independentThinker: "+2 bonus to Wisdom-based skill checks when making unconventional decisions.",
+        resistanceToAuthority: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures."
     },
     description: "Rebel Outsiders are the epitome of nonconformity, challenging authority and forging their own path with resilience and independence.",
     details: "They thrive on unconventional thinking and defiance, where their wisdom and self-reliance guide them through adversity. Yet, their rebellious nature may lead to alienation and risk-taking tendencies.",
@@ -248,33 +98,8 @@ overachievingStudentCouncilPresident: {
         wisdom: -1,
     },
     skills: {
-        naturalLeader: {
-            description: "Gain a +2 bonus to Charisma-based skill checks when organizing or leading group activities.",
-            effect: "+2 bonus to Charisma-based skill checks when organizing or leading group activities."
-        },
-        efficientPlanner: {
-            description: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning.",
-            effect: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
-        }
-    },
-    equipment: {
-        1: {
-            items: ["Planner", "Organizational tools", "Leadership badge"],
-            description: "Tools of command and authority, essential for managing responsibilities and leading with efficiency."
-        },
-        5: {
-            items: ["Campaign posters", "Public speaking guide"],
-            description: "Materials for rallying support and honing public speaking skills, vital for political ambitions."
-        },
-        10: {
-            items: ["Executive briefcase", "Official decree stamp"],
-            description: "Symbols of executive power and bureaucratic influence, commanding respect and authority."
-        }
-    },
-    combatSkills: {
-        1: "Delegate Tactics: Direct allies with strategic commands, granting them a bonus action on their next turn.",
-        5: "Motivational Speech: Deliver an inspiring speech that grants temporary hit points to allies within hearing distance.",
-        10: "Executive Order: Issue a decree that forces enemies to make a Wisdom saving throw or be compelled to follow your commands for one round."
+        naturalLeader: "+2 bonus to Charisma-based skill checks when organizing or leading group activities.",
+        efficientPlanner: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
     },
     description: "Overachieving Student Council Presidents are natural-born leaders, guiding their peers with charisma and efficiency.",
     details: "They excel in leadership roles, where their charisma and organizational skills inspire others to achieve greatness. However, their relentless pursuit of perfection may lead to burnout and a lack of adaptability.",
@@ -323,8 +148,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
             updateAbilityScores({ strength: 1, dexterity: 2, constitution: 2, intelligence: 1, wisdom: 1, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
     }
- }
-   function updateCharacterSheet(selectedClass) {
+    
     // Update skills based on selected class
     updateSkills(selectedClass);
 
@@ -337,7 +161,6 @@ document.getElementById("profileImage").addEventListener("change", function(even
     // Update equipment based on selected class
     updateEquipment(selectedClass);
 }
-
 function updateCombatInfo(selectedClass) {
     const combatInfoContainer = document.getElementById("combatInfo");
     combatInfoContainer.innerHTML = "<h3>Combat Information</h3>";
@@ -400,6 +223,17 @@ function generateEquipment(selectedClass) {
         default:
             return "No equipment available.";
     }
+}
+function updateAbilityScores(baseScores, bonuses, negatives) {
+    // Update ability score fields in the form
+    const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
+    abilityFields.forEach(field => {
+        const inputElement = document.getElementById(field);
+        const baseValue = baseScores[field] || 0; // Use base score if available, default to 0 otherwise
+        const bonus = bonuses[field] || 0; // Get bonus from class bonuses, default to 0 otherwise
+        const negative = negatives[field] || 0; // Get negative from class negatives, default to 0 otherwise
+        inputElement.value = baseValue + bonus + negative;
+    });
 }
 
 function updateSkills(selectedClass) {
@@ -468,7 +302,5 @@ function downloadPDF(pdfBytes, fileName) {
 
 // Event listener for "Save Character" button click
 document.getElementById("saveCharacterBtn").addEventListener("click", function() {
-    const selectedClass = document.getElementById("class").value;
-    updateCharacterSheet(selectedClass);
     generatePDF();
 });
