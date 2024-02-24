@@ -151,7 +151,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
     }
     
     // Update skills based on selected class
-    updateSkills(selectedClass,selectedLevel));
+    updateSkills(selectedClass, selectedLevel);
 
     // Update class description and details
     updateClassDetails(selectedClass);
@@ -160,7 +160,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
     updateCombatInfo(selectedClass);
 
     // Update equipment based on selected class
-    updateEquipment(selectedClass,selectedLevel));
+    updateEquipment(selectedClass, selectedLevel);
 }
 function updateCombatInfo(selectedClass) {
     const combatInfoContainer = document.getElementById("combatInfo");
