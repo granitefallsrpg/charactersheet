@@ -257,7 +257,7 @@ function generateSkills(selectedClass, selectedLevel) {
 
     // Level 5 Skills
     if (selectedLevel >= 5) {
-        skills += "\nLevel 5 Skills:\n";
+       "<br><p>Level 5 Skills:</p>";
         switch (selectedClass) {
             case "nerdyScholar":
                 skills += "- Advanced Researcher: By spending extra time studying a subject, the Nerdy Scholar gains advantage on Knowledge-based skill checks. Additionally, they gain proficiency in one additional skill of their choice, reflecting their deepening expertise in various academic disciplines.";
@@ -287,7 +287,7 @@ function generateSkills(selectedClass, selectedLevel) {
 
     // Level 10 Skills
     if (selectedLevel >= 10) {
-        skills += "\nLevel 10 Skills:\n";
+        "<br><p>Level 10 Skills:</p>";
         switch (selectedClass) {
             case "nerdyScholar":
                 skills += "- Genius Inventor: The Scholar attains mastery in crafting magical items and inventions of unparalleled complexity. They can create artifacts that reshape reality itself, unlocking the secrets of the universe through their unparalleled intellect and ingenuity.";
