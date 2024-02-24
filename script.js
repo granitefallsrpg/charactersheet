@@ -331,19 +331,12 @@ function updateAbilityScores(baseScores, bonuses, negatives) {
 }
 
 function updateSkills(selectedClass, selectedLevel) {
-    const skills = generateSkills(selectedClass, selectedLevel);
-    const skills = classDetails[selectedClass].skills;
+    const skills = generateSkills(selectedClass, selectedLevel); // Generate skills based on selected class and level
     const skillsContainer = document.getElementById("skills");
     skillsContainer.innerHTML = "<h3>Skills</h3>";
 
-    for (const skill in skills) {
-        if (skills.hasOwnProperty(skill)) {
-            const skillDescription = skills[skill];
-            const skillElement = document.createElement("p");
-            skillElement.textContent = `${skill}: ${skillDescription}`;
-            skillsContainer.appendChild(skillElement);
-        }
-    }
+    // Display skills
+    skillsContainer.innerHTML += `<p>${skills}</p>`;
 }
 
 function updateClassDetails(selectedClass) {
