@@ -1,110 +1,110 @@
 window.jsPDF = window.jspdf.jsPDF; 
 const classDetails = {
     nerdyScholar: {
-        bonuses: {
-            intelligence: 2,
-        },
-        negatives: {
-            charisma: -1,
-        },
-        skills: {
-            bookworm: "+2 bonus to Intelligence-based skill checks.",
-            researcher: "Can spend extra time studying to gain advantage on Knowledge-based skill checks."
-        },
-        description: "Scholars are intellectual powerhouses, known for their sharp minds and insatiable thirst for knowledge.",
-        details: "While Scholars excel in academic pursuits, they may struggle in social situations due to social awkwardness and overthinking.",
-        negativeDescription: "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations.\nOverthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls."
+    bonuses: {
+        intelligence: 2,
     },
-    athleticJock: {
-        bonuses: {
-            strength: 2,
-        },
-        negatives: {
-            charisma: -1,
-        },
-        skills: {
-            athleticProwess: "+2 bonus to Strength-based skill checks.",
-            teamPlayer: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks."
-        },
-        description: "Athletes are physical powerhouses, dominating sports fields and leading their teams to victory.",
-        details: "While Athletes excel in physical activities and team sports, they may struggle with short temper and overconfidence.",
-        negativeDescription: "Short Temper: -1 penalty to Charisma-based skill checks when faced with opposition or conflict.\nOverconfidence: May underestimate opponents, resulting in a -1 penalty to AC when in combat."
+    negatives: {
+        charisma: -1,
     },
-    gothicArtist: {
-        bonuses: {
-            wisdom: 2,
-        },
-        negatives: {
-            charisma: -1,
-        },
-        skills: {
-            creativeExpression: "+2 bonus to Wisdom-based skill checks related to artistic endeavors.",
-            mysticAura: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks."
-        },
-        description: "Artists are creative souls, expressing themselves through their unique artistic vision and mystic aura.",
-        details: "While Artists thrive in artistic endeavors and mystic pursuits, they may struggle with isolationism and emotional turmoil.",
-        negativeDescription: "Isolationist: -1 penalty to Charisma-based skill checks when attempting to interact with mainstream social groups.\nEmotional Turmoil: May succumb to mood swings, resulting in a -1 penalty to concentration checks."
+    skills: {
+        bookworm: "+2 bonus to Intelligence-based skill checks.",
+        researcher: "Can spend extra time studying to gain advantage on Knowledge-based skill checks."
     },
-    preppyCheerleader: {
-        bonuses: {
-            charisma: 2,
-        },
-        negatives: {
-            wisdom: -1,
-        },
-        skills: {
-            charismaticLeader: "+2 bonus to Charisma-based skill checks when leading or motivating others.",
-            teamSpirit: "Can inspire allies with pep talks, granting them advantage on saving throws against fear."
-        },
-        description: "Cheerleaders are charismatic leaders, spreading positivity and team spirit wherever they go.",
-        details: "While Cheerleaders shine as natural leaders and motivators, they may struggle with entitled attitudes and peer pressure.",
-        negativeDescription: "Entitled Attitude: -1 penalty to Wisdom-based skill checks when faced with challenges that require humility or empathy.\nPeer Pressure: May succumb to social expectations, resulting in a -1 penalty to Wisdom saving throws against charm effects."
+    description: "Nerdy Scholars are the epitome of intellect and curiosity, driven by a relentless pursuit of knowledge.",
+    details: "They thrive in academic environments, where their sharp minds unravel complex theories and discover hidden truths. However, their brilliance often isolates them from social circles, leading to awkward interactions and overthinking.",
+    negativeDescription: "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations, as their intellectual prowess overshadows their social grace.\nOverthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls as they analyze every possible outcome."
+},
+athleticJock: {
+    bonuses: {
+        strength: 2,
     },
-    classClown: {
-        bonuses: {
-            charisma: 2,
-        },
-        negatives: {
-            wisdom: -1,
-        },
-        skills: {
-            naturalEntertainer: "+2 bonus to Charisma-based skill checks related to comedic performances or social interactions.",
-            quickWit: "Can use humor to defuse tense situations, granting advantage on Persuasion checks."
-        },
-        description: "Class Clowns are masters of humor, using their quick wit and natural charm to entertain and diffuse tension.",
-        details: "While Class Clowns thrive as entertainers and social butterflies, they may struggle with attention-seeking behavior and disruptive tendencies.",
-        negativeDescription: "Attention Seeker: -1 penalty to Wisdom-based skill checks when focus and concentration are required.\nDisruptive Behavior: May struggle to take situations seriously, resulting in a -1 penalty to initiative rolls during combat encounters."
+    negatives: {
+        charisma: -1,
     },
-    rebelOutsider: {
-        bonuses: {
-            wisdom: 2,
-        },
-        negatives: {
-            charisma: -1,
-        },
-        skills: {
-            independentThinker: "+2 bonus to Wisdom-based skill checks when making unconventional decisions.",
-            resistanceToAuthority: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures."
-        },
-        description: "Outsiders are nonconformists, challenging authority and forging their own path with independence and resilience.",
-        details: "While Outsiders excel as independent thinkers and resilient individuals, they may struggle with alienation and risk-taking tendencies.",
-        negativeDescription: "Alienation: -1 penalty to Charisma-based skill checks when attempting to connect with mainstream social groups.\nRisk Taker: May act impulsively, resulting in a -1 penalty to AC when in combat."
+    skills: {
+        athleticProwess: "+2 bonus to Strength-based skill checks.",
+        teamPlayer: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks."
     },
-    overachievingStudentCouncilPresident: {
-        bonuses: {
-            charisma: 2,
-        },
-        negatives: {
-            wisdom: -1,
-        },
-        skills: {
-            naturalLeader: "+2 bonus to Charisma-based skill checks when organizing or leading group activities.",
-            efficientPlanner: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
-        },
-        description: "Student Council  are natural leaders, guiding their peers with charisma and efficiency.",
-        details: "While Student Council  excel in leadership and planning, they may struggle with perfectionism and burnout.",
-        negativeDescription: "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise.\nBurnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations."
-    }
+    description: "Athletic Jocks are the powerhouse of physical prowess, dominating sports arenas and rallying their teams to victory.",
+    details: "They excel in competitive sports, where their strength and agility shine brightest. However, their competitive nature can lead to a short temper and overconfidence.",
+    negativeDescription: "Short Temper: -1 penalty to Charisma-based skill checks when faced with opposition or conflict, as their competitive spirit fuels impulsive reactions.\nOverconfidence: May underestimate opponents, resulting in a -1 penalty to AC when in combat, as they rely too heavily on their physical abilities."
+},
+gothicArtist: {
+    bonuses: {
+        wisdom: 2,
+    },
+    negatives: {
+        charisma: -1,
+    },
+    skills: {
+        creativeExpression: "+2 bonus to Wisdom-based skill checks related to artistic endeavors.",
+        mysticAura: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks."
+    },
+    description: "Gothic Artists are enigmatic souls, channeling their inner darkness into captivating works of art and mystic aura.",
+    details: "They find solace in creative expression, where their wisdom and intuition guide their hands to create haunting masterpieces. Yet, their eccentricity may lead to isolation and emotional turmoil.",
+    negativeDescription: "Isolationist: -1 penalty to Charisma-based skill checks when attempting to interact with mainstream social groups, as their unconventional style alienates them from conventional society.\nEmotional Turmoil: May succumb to mood swings, resulting in a -1 penalty to concentration checks, as their turbulent emotions disrupt their focus."
+},
+preppyCheerleader: {
+    bonuses: {
+        charisma: 2,
+    },
+    negatives: {
+        wisdom: -1,
+    },
+    skills: {
+        charismaticLeader: "+2 bonus to Charisma-based skill checks when leading or motivating others.",
+        teamSpirit: "Can inspire allies with pep talks, granting them advantage on saving throws against fear."
+    },
+    description: "Preppy Cheerleaders are the epitome of charm and enthusiasm, spreading positivity and team spirit wherever they go.",
+    details: "They shine as natural leaders, rallying their peers with infectious energy and unwavering optimism. However, their charismatic facade may hide a lack of wisdom, leading to entitled attitudes and susceptibility to peer pressure.",
+    negativeDescription: "Entitled Attitude: -1 penalty to Wisdom-based skill checks when faced with challenges that require humility or empathy, as their privileged upbringing fosters a sense of entitlement.\nPeer Pressure: May succumb to social expectations, resulting in a -1 penalty to Wisdom saving throws against charm effects, as they prioritize fitting in over personal values."
+},
+classClown: {
+    bonuses: {
+        charisma: 2,
+    },
+    negatives: {
+        wisdom: -1,
+    },
+    skills: {
+        naturalEntertainer: "+2 bonus to Charisma-based skill checks related to comedic performances or social interactions.",
+        quickWit: "Can use humor to defuse tense situations, granting advantage on Persuasion checks."
+    },
+    description: "Class Clowns are the life of the party, wielding their quick wit and infectious charm to entertain and diffuse tension.",
+    details: "They thrive on laughter and social interactions, where their charisma and comedic talent shine brightest. Yet, their constant need for attention may lead to attention-seeking behavior and disruptive tendencies.",
+    negativeDescription: "Attention Seeker: -1 penalty to Wisdom-based skill checks when focus and concentration are required, as their desire for approval distracts them from serious tasks.\nDisruptive Behavior: May struggle to take situations seriously, resulting in a -1 penalty to initiative rolls during combat encounters, as they prioritize humor over urgency."
+},
+rebelOutsider: {
+    bonuses: {
+        wisdom: 2,
+    },
+    negatives: {
+        charisma: -1,
+    },
+    skills: {
+        independentThinker: "+2 bonus to Wisdom-based skill checks when making unconventional decisions.",
+        resistanceToAuthority: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures."
+    },
+    description: "Rebel Outsiders are the epitome of nonconformity, challenging authority and forging their own path with resilience and independence.",
+    details: "They thrive on unconventional thinking and defiance, where their wisdom and self-reliance guide them through adversity. Yet, their rebellious nature may lead to alienation and risk-taking tendencies.",
+    negativeDescription: "Alienation: -1 penalty to Charisma-based skill checks when attempting to connect with mainstream social groups, as their defiance of societal norms isolates them from conventional communities.\nRisk Taker: May act impulsively, resulting in a -1 penalty to AC when in combat, as their willingness to challenge the status quo leads to reckless behavior."
+},
+overachievingStudentCouncilPresident: {
+    bonuses: {
+        charisma: 2,
+    },
+    negatives: {
+        wisdom: -1,
+    },
+    skills: {
+        naturalLeader: "+2 bonus to Charisma-based skill checks when organizing or leading group activities.",
+        efficientPlanner: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
+    },
+    description: "Overachieving Student Council Presidents are natural-born leaders, guiding their peers with charisma and efficiency.",
+    details: "They excel in leadership roles, where their charisma and organizational skills inspire others to achieve greatness. However, their relentless pursuit of perfection may lead to burnout and a lack of adaptability.",
+    negativeDescription: "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise, as their pursuit of perfection blinds them to alternative solutions.\nBurnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations, as their drive for success pushes them to their limits."
+}
 };
 
 document.getElementById("profileImage").addEventListener("change", function(event) {
