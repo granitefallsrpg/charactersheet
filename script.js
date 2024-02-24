@@ -426,13 +426,24 @@ async function generatePDF() {
     // Create a new jsPDF instance
     const pdf = new jsPDF('p', 'pt', 'a4');
 
-    // Convert character sheet HTML to PDF
-    await pdf.html(characterSheet, {
-        callback: function(pdf) {
-            // Add background image
-            const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Replace with the path to your background image
-            pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
+    // Add background image
+    const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Background image link
+    pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
 
+    // Get HTML content dimensions
+    const contentWidth = characterSheet.offsetWidth;
+    const contentHeight = characterSheet.offsetHeight;
+
+    // Position HTML content at center of PDF page
+    const marginLeft = (pdf.internal.pageSize.getWidth() - contentWidth) / 2;
+    const marginTop = (pdf.internal.pageSize.getHeight() - contentHeight) / 2;
+
+    // Add HTML content to PDF
+    await pdf.html(characterSheet, {
+        x: marginLeft,
+        y: marginTop,
+        html2canvas: { scale: 0.5 }, // Adjust scale if needed for better quality
+        callback: function() {
             // Save PDF with character name as filename
             pdf.save(`${charName}_CharacterSheet.pdf`);
         }
