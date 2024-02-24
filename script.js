@@ -355,22 +355,46 @@ function updateClassDetails(selectedClass) {
     document.getElementById("classDescription").textContent = fullDescription;
 }
 
+let previousLevel = 0; // Variable to store the previous level
+
 function levelUp() {
     const selectedLevel = parseInt(document.getElementById("level").value);
-    const selectedClass = document.getElementById("class").value; // Get the selected class
-    const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
 
-    // Increment two ability scores by 1 for each level
-    for (let i = 0; i < selectedLevel; i++) {
-        const randomIndex1 = Math.floor(Math.random() * abilityFields.length);
-        let randomIndex2 = Math.floor(Math.random() * abilityFields.length);
-        // Ensure randomIndex2 is different from randomIndex1
-        while (randomIndex2 === randomIndex1) {
-            randomIndex2 = Math.floor(Math.random() * abilityFields.length);
+    // Check if the selected level is exactly one level higher than the previous level
+    if (selectedLevel === previousLevel + 1) {
+        const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
+
+        // Increment two ability scores by 1 for each level
+        for (let i = previousLevel + 1; i <= selectedLevel; i++) {
+            const randomIndex1 = Math.floor(Math.random() * abilityFields.length);
+            let randomIndex2 = Math.floor(Math.random() * abilityFields.length);
+            // Ensure randomIndex2 is different from randomIndex1
+            while (randomIndex2 === randomIndex1) {
+                randomIndex2 = Math.floor(Math.random() * abilityFields.length);
+            }
+            document.getElementById(abilityFields[randomIndex1]).value = parseInt(document.getElementById(abilityFields[randomIndex1]).value) + 1;
+            document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
         }
-        document.getElementById(abilityFields[randomIndex1]).value = parseInt(document.getElementById(abilityFields[randomIndex1]).value) + 1;
-        document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
+
+        previousLevel = selectedLevel; // Update the previous level
+    } else if (selectedLevel > previousLevel + 1) {
+        alert("Please level up one level at a time."); // Alert if trying to select a level higher than the next level
+    } else {
+        alert("Please select the next level in order."); // Alert if trying to select a lower level
     }
+
+    // Disable or hide options for levels higher than the next level
+    const levelOptions = document.getElementById("level").options;
+    for (let i = 0; i < levelOptions.length; i++) {
+        if (parseInt(levelOptions[i].value) > previousLevel + 1) {
+            levelOptions[i].disabled = true; // Disable the option
+            // Alternatively, you can hide the option: levelOptions[i].style.display = "none";
+        } else {
+            levelOptions[i].disabled = false; // Enable other options
+            // Alternatively, you can show the option: levelOptions[i].style.display = "block";
+        }
+    }
+}
 
     // Update skills based on selected class and level
     updateSkills(selectedClass, selectedLevel);
