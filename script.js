@@ -424,23 +424,19 @@ async function generatePDF() {
     const characterSheet = document.getElementById("characterForm");
 
     // Create a new jsPDF instance
-    const pdf = new jsPDF();
+    const pdf = new jsPDF('p', 'pt', 'a4');
 
     // Convert character sheet HTML to PDF
     await pdf.html(characterSheet, {
         callback: function(pdf) {
+            // Add background image
+            const imgData = 'path/to/background/image.jpg'; // Replace with the path to your background image
+            pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
+
             // Save PDF with character name as filename
             pdf.save(`${charName}_CharacterSheet.pdf`);
         }
     });
-}
-
-function downloadPDF(pdfBytes, fileName) {
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
-    const link = document.createElement("a");
-    link.href = window.URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
 }
 
 // Event listener for "Save Character" button click
