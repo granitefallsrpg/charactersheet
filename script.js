@@ -430,7 +430,7 @@ async function generatePDF() {
     await pdf.html(characterSheet, {
         callback: function(pdf) {
             // Add background image
-            const imgData = 'path/to/background/image.jpg'; // Replace with the path to your background image
+            const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Replace with the path to your background image
             pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
 
             // Save PDF with character name as filename
