@@ -126,6 +126,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
 
  function updateClass() {
     const selectedClass = document.getElementById("class").value;
+     const selectedLevel = parseInt(document.getElementById("level").value);
 
     // Update ability scores based on selected class
     switch (selectedClass) {
@@ -150,7 +151,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
     }
     
     // Update skills based on selected class
-    updateSkills(selectedClass);
+    updateSkills(selectedClass,selectedLevel));
 
     // Update class description and details
     updateClassDetails(selectedClass);
@@ -159,7 +160,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
     updateCombatInfo(selectedClass);
 
     // Update equipment based on selected class
-    updateEquipment(selectedClass);
+    updateEquipment(selectedClass,selectedLevel));
 }
 function updateCombatInfo(selectedClass) {
     const combatInfoContainer = document.getElementById("combatInfo");
@@ -225,6 +226,98 @@ function generateEquipment(selectedClass) {
     }
 }
 
+function generateSkills(selectedClass, selectedLevel) {
+    // Level 1 Skills
+    let skills = "Standard Skills:\n";
+    switch (selectedClass) {
+        case "nerdyScholar":
+            skills += "- Researcher: Scholars excel in academic pursuits, gaining proficiency in various fields of study and knowledge-based skills. They rely on intellect and strategy to overcome challenges, utilizing their vast repository of knowledge to outsmart opponents.";
+            break;
+        case "athleticJock":
+            skills += "- Athlete: Jocks are masters of physical prowess, specializing in combat techniques and athletic feats. They rely on strength, speed, and agility to overcome obstacles, charging into battle with unmatched ferocity and determination.";
+            break;
+        case "gothicArtist":
+            skills += "- Occultist: Gothic Artists harness the power of darkness, wielding arcane spells and rituals to manipulate the battlefield. They tap into their inner darkness to cast potent spells and summon shadowy allies, creating an aura of fear and mystique.";
+            break;
+        case "preppyCheerleader":
+            skills += "- Inspirer: Preppy Cheerleaders inspire allies with their unwavering optimism and infectious enthusiasm. They boost team morale with inspiring speeches and strategic maneuvers, leading their comrades to victory through sheer charisma and determination.";
+            break;
+        case "classClown":
+            skills += "- Trickster: Class Clowns are masters of deception and misdirection, using humor and wit to confound enemies. They excel at improvisation and unpredictability, turning the tide of battle with their comedic antics and clever tricks.";
+            break;
+        case "rebelOutsider":
+            skills += "- Guerrilla: Rebel Outsiders thrive on chaos and unpredictability, utilizing guerrilla tactics and hit-and-run strategies to outmaneuver opponents. They are experts at sabotage and subterfuge, striking from the shadows with lethal precision.";
+            break;
+        case "overachievingStudentCouncilPresident":
+            skills += "- Leader: Student Council Presidents lead by example, inspiring allies with their strategic brilliance and unwavering resolve. They coordinate battlefield maneuvers with precision and efficiency, turning the tide of battle through sheer determination.";
+            break;
+        default:
+            skills += "- No specific skills available.";
+    }
+
+    // Level 5 Skills
+    if (selectedLevel >= 5) {
+        skills += "\nLevel 5 Skills:\n";
+        switch (selectedClass) {
+            case "nerdyScholar":
+                skills += "- Advanced Researcher: By spending extra time studying a subject, the Nerdy Scholar gains advantage on Knowledge-based skill checks. Additionally, they gain proficiency in one additional skill of their choice, reflecting their deepening expertise in various academic disciplines.";
+                break;
+            case "athleticJock":
+                skills += "- Tactical Athlete: Utilizing their knowledge of opponents' movements and weaknesses, the Athletic Jock can analyze foes during combat. Once successfully grappling an opponent, they gain advantage on subsequent attack rolls against that enemy, representing their ability to exploit vulnerabilities.";
+                break;
+            case "gothicArtist":
+                skills += "- Dark Conjurer: The Gothic Artist taps into their mystical abilities to summon minor shadow creatures once per day. These creatures can aid in combat by attacking enemies or providing assistance to allies, adding an extra layer of versatility to the Artist's arsenal.";
+                break;
+            case "preppyCheerleader":
+                skills += "- Inspiring Presence: Through an empowering pep talk, the Preppy Cheerleader boosts the morale of their allies. Once per short rest, they can grant temporary hit points to nearby allies equal to their Charisma modifier, inspiring them to push through adversity.";
+                break;
+            case "classClown":
+                skills += "- Master of Distraction: Using humor and antics, the Class Clown distracts enemies, imposing disadvantage on attack rolls against allies within 10 feet. By creating chaos and confusion on the battlefield, they disrupt enemy focus and protect their comrades from harm.";
+                break;
+            case "rebelOutsider":
+                skills += "- Guerrilla Tactics: The Rebel Outsider specializes in guerrilla warfare, setting up traps and ambushes with greater efficiency. Once per combat encounter, they can double the damage of their sneak attacks, catching enemies off-guard and dealing devastating blows.";
+                break;
+            case "overachievingStudentCouncilPresident":
+                skills += "- Strategic Planner: With unparalleled strategic acumen, the Student Council President can devise tactical battle plans on the fly. By coordinating battlefield maneuvers with precision, they grant allies advantage on initiative rolls and increased movement speed during the first round of combat.";
+                break;
+            default:
+                skills += "- No additional skills available.";
+        }
+    }
+
+    // Level 10 Skills
+    if (selectedLevel >= 10) {
+        skills += "\nLevel 10 Skills:\n";
+        switch (selectedClass) {
+            case "nerdyScholar":
+                skills += "- Genius Inventor: The Scholar attains mastery in crafting magical items and inventions of unparalleled complexity. They can create artifacts that reshape reality itself, unlocking the secrets of the universe through their unparalleled intellect and ingenuity.";
+                break;
+            case "athleticJock":
+                skills += "- Indomitable Strength: Achieving the pinnacle of physical prowess, the Jock gains the ability to perform feats of unparalleled strength. From lifting colossal weights to shattering obstacles with sheer force, they embody the epitome of raw power and athleticism.";
+                break;
+            case "gothicArtist":
+                skills += "- Dark Artistry: The Artist ascends to new heights of magical mastery, wielding dark powers that defy comprehension. They can unleash devastating spells that manipulate reality itself, bending shadows to their will and enveloping the battlefield in darkness.";
+                break;
+            case "preppyCheerleader":
+                skills += "- Charismatic Leader: Becoming a beacon of inspiration, the Cheerleader rallies allies with unwavering resolve and strategic brilliance. They can inspire feats of heroism and courage in their companions, turning the tide of battle with their sheer force of will.";
+                break;
+            case "classClown":
+                skills += "- Master of Chaos: Embracing chaos and unpredictability, the Clown becomes a force of nature on the battlefield. They sow discord and confusion among enemies, turning allies against each other and exploiting the resulting chaos to secure victory.";
+                break;
+            case "rebelOutsider":
+                skills += "- Freedom Fighter: Leading a rebellion against oppression, the Rebel becomes a symbol of hope and defiance. They inspire others to rise up and challenge tyranny, rallying disparate factions to fight for a common cause.";
+                break;
+            case "overachievingStudentCouncilPresident":
+                skills += "- Visionary Strategist: With unmatched foresight and strategic brilliance, the President orchestrates victories on a grand scale. They anticipate enemy movements with uncanny accuracy and devise countermeasures that turn the tide of even the most desperate battles.";
+                break;
+            default:
+                skills += "- No additional skills available.";
+        }
+    }
+
+    return skills;
+}
+
 function updateAbilityScores(baseScores, bonuses, negatives) {
     // Update ability score fields in the form
     const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
@@ -263,6 +356,7 @@ function updateClassDetails(selectedClass) {
 
 function levelUp() {
     const selectedLevel = parseInt(document.getElementById("level").value);
+    const selectedClass = document.getElementById("class").value; // Get the selected class
     const abilityFields = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
 
     // Increment two ability scores by 1 for each level
@@ -276,7 +370,20 @@ function levelUp() {
         document.getElementById(abilityFields[randomIndex1]).value = parseInt(document.getElementById(abilityFields[randomIndex1]).value) + 1;
         document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
     }
+
+    // Update skills based on selected class
+    updateSkills(selectedClass, selectedLevel);
+
+    // Update combat information based on selected class
+    updateCombatInfo(selectedClass);
+
+    // Update class details based on selected class
+    updateClassDetails(selectedClass);
+
+    // Update equipment based on selected class
+    updateEquipment(selectedClass, selectedLevel);
 }
+
 async function generatePDF() {
     const charName = document.getElementById("charName").value;
     const characterSheet = document.getElementById("characterForm");
