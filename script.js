@@ -394,7 +394,6 @@ function levelUp() {
             // Alternatively, you can show the option: levelOptions[i].style.display = "block";
         }
     }
-}
 
     // Update skills based on selected class and level
     updateSkills(selectedClass, selectedLevel);
@@ -408,7 +407,6 @@ function levelUp() {
     // Update equipment based on selected class and level
     updateEquipment(selectedClass, selectedLevel);
 }
-
 async function generatePDF() {
     const charName = document.getElementById("charName").value;
     const characterSheet = document.getElementById("characterForm");
