@@ -260,7 +260,8 @@ function generateSkills(selectedClass, selectedLevel) {
        skills += "<div>Level 5 Skills:</div>";
         switch (selectedClass) {
             case "nerdyScholar":
-                skills += "- Advanced Researcher: By spending extra time studying a subject, the Nerdy Scholar gains advantage on Knowledge-based skill checks. Additionally, they gain proficiency in one additional skill of their choice, reflecting their deepening expertise in various academic disciplines.";
+                skills += "<br>- Advanced Researcher: By spending extra time studying a subject, the Nerdy Scholar gains advantage on Knowledge-based skill checks. Additionally, they gain proficiency in one additional skill of their choice, reflecting their deepening expertise in various academic disciplines.<br>";
+                skills += "<br>- Equipment - Portable Laboratory Kit: This compact kit contains advanced scientific instruments tailored for field research. It allows the Scholar to conduct experiments and analyses on the go, providing bonuses to Intelligence-based skill checks related to research and analysis.<br>";
                 break;
             case "athleticJock":
                 skills += "- Tactical Athlete: Utilizing their knowledge of opponents' movements and weaknesses, the Athletic Jock can analyze foes during combat. Once successfully grappling an opponent, they gain advantage on subsequent attack rolls against that enemy, representing their ability to exploit vulnerabilities.";
