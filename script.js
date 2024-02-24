@@ -323,7 +323,7 @@ document.getElementById("profileImage").addEventListener("change", function(even
             updateAbilityScores({ strength: 1, dexterity: 2, constitution: 2, intelligence: 1, wisdom: 1, charisma: 1 }, classDetails[selectedClass].bonuses, classDetails[selectedClass].negatives);
             break;
     }
-    
+ }
    function updateCharacterSheet(selectedClass) {
     // Update skills based on selected class
     updateSkills(selectedClass);
