@@ -228,7 +228,7 @@ function generateEquipment(selectedClass) {
 
 function generateSkills(selectedClass, selectedLevel) {
     // Level 1 Skills
-    let skills = "Standard Skills:\n";
+     let skills = "<div>Standard Skills:</div>";
     switch (selectedClass) {
         case "nerdyScholar":
             skills += "- Researcher: Scholars excel in academic pursuits, gaining proficiency in various fields of study and knowledge-based skills. They rely on intellect and strategy to overcome challenges, utilizing their vast repository of knowledge to outsmart opponents.";
@@ -257,7 +257,7 @@ function generateSkills(selectedClass, selectedLevel) {
 
     // Level 5 Skills
     if (selectedLevel >= 5) {
-       "<br><p>Level 5 Skills:</p>";
+       skills += "<div>Level 5 Skills:</div>";
         switch (selectedClass) {
             case "nerdyScholar":
                 skills += "- Advanced Researcher: By spending extra time studying a subject, the Nerdy Scholar gains advantage on Knowledge-based skill checks. Additionally, they gain proficiency in one additional skill of their choice, reflecting their deepening expertise in various academic disciplines.";
@@ -287,7 +287,7 @@ function generateSkills(selectedClass, selectedLevel) {
 
     // Level 10 Skills
     if (selectedLevel >= 10) {
-        "<br><p>Level 10 Skills:</p>";
+        skills += "<div>Level 10 Skills:</div>";
         switch (selectedClass) {
             case "nerdyScholar":
                 skills += "- Genius Inventor: The Scholar attains mastery in crafting magical items and inventions of unparalleled complexity. They can create artifacts that reshape reality itself, unlocking the secrets of the universe through their unparalleled intellect and ingenuity.";
