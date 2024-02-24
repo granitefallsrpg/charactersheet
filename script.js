@@ -419,51 +419,56 @@ function levelUp() {
     // Update equipment based on selected class and level
     updateEquipment(selectedClass, selectedLevel);
 }
-async function generatePDF() {
-    const charName = document.getElementById("charName").value;
-    const background = document.getElementById("background").value;
-    const appearance = document.getElementById("appearance").value;
-    const characterSheet = document.getElementById("characterForm");
+function generatePDF() {
+    return new Promise(resolve => {
+        const charName = document.getElementById("charName").value;
+        const background = document.getElementById("background").value;
+        const appearance = document.getElementById("appearance").value;
+        const characterSheet = document.getElementById("characterForm");
 
-    // Create a new jsPDF instance
-    const pdf = new jsPDF('p', 'pt', 'a4');
+        // Create a new jsPDF instance
+        const pdf = new jsPDF('p', 'pt', 'a4');
 
-    // Add background image
-    const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Background image link
-    pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
+        // Add background image
+        const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Background image link
+        pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
 
-    // Add content of background and appearance text areas
-    pdf.text(background, 50, 100); // Adjust position as needed
-    pdf.text(appearance, 50, 200); // Adjust position as needed
+        // Add content of background and appearance text areas
+        pdf.text(background, 50, 100); // Adjust position as needed
+        pdf.text(appearance, 50, 200); // Adjust position as needed
 
-    // Convert character sheet HTML to PDF
-    await pdf.html(characterSheet, {
-        html2canvas: { scale: 0.5 }, // Adjust scale if needed for better quality
-        callback: function(pdf) {
-            // Get HTML content dimensions
-            const contentWidth = characterSheet.offsetWidth;
-            const contentHeight = characterSheet.offsetHeight;
+        // Convert character sheet HTML to PDF
+        pdf.html(characterSheet, {
+            html2canvas: { scale: 0.5 }, // Adjust scale if needed for better quality
+            callback: function(pdf) {
+                // Get HTML content dimensions
+                const contentWidth = characterSheet.offsetWidth;
+                const contentHeight = characterSheet.offsetHeight;
 
-            // Calculate position to center content horizontally
-            const marginLeft = (pdf.internal.pageSize.getWidth() - contentWidth) / 2;
+                // Calculate position to center content horizontally
+                const marginLeft = (pdf.internal.pageSize.getWidth() - contentWidth) / 2;
 
-            // Position HTML content at calculated horizontal center and at the top of the page
-            pdf.fromHTML(characterSheet, marginLeft, 50); // Adjust vertical position as needed
+                // Position HTML content at calculated horizontal center and at the top of the page
+                pdf.fromHTML(characterSheet, marginLeft, 50); // Adjust vertical position as needed
 
-            // Add page break after Appearance section
-            pdf.addPage();
-            // Add page break after Skills section
-            pdf.addPage();
-            // Add page break after Combat Information section
-            pdf.addPage();
+                // Add page break after Appearance section
+                pdf.addPage();
+                // Add page break after Skills section
+                pdf.addPage();
+                // Add page break after Combat Information section
+                pdf.addPage();
 
-            // Save PDF with character name as filename
-            pdf.save(`${charName}_CharacterSheet.pdf`);
-        }
+                // Save PDF with character name as filename
+                pdf.save(`${charName}_CharacterSheet.pdf`);
+                resolve();
+            }
+        });
     });
 }
 
 // Event listener for "Save Character" button click
 document.getElementById("saveCharacterBtn").addEventListener("click", function() {
-    generatePDF();
+    generatePDF().then(() => {
+        // Optionally, you can perform additional actions after PDF generation is complete
+    });
 });
