@@ -11,8 +11,8 @@ const classDetails = {
             bookworm: "+2 bonus to Intelligence-based skill checks.",
             researcher: "Can spend extra time studying to gain advantage on Knowledge-based skill checks."
         },
-        description: "Nerdy Scholars are intellectual powerhouses, known for their sharp minds and insatiable thirst for knowledge.",
-        details: "While Nerdy Scholars excel in academic pursuits, they may struggle in social situations due to social awkwardness and overthinking.",
+        description: "Scholars are intellectual powerhouses, known for their sharp minds and insatiable thirst for knowledge.",
+        details: "While Scholars excel in academic pursuits, they may struggle in social situations due to social awkwardness and overthinking.",
         negativeDescription: "Social Awkwardness: -1 penalty to Charisma-based skill checks in social situations.\nOverthinking: May become indecisive in high-pressure situations, resulting in a -1 penalty to initiative rolls."
     },
     athleticJock: {
@@ -26,8 +26,8 @@ const classDetails = {
             athleticProwess: "+2 bonus to Strength-based skill checks.",
             teamPlayer: "Can provide inspiration to teammates during group activities, granting them advantage on skill checks."
         },
-        description: "Athletic Jocks are physical powerhouses, dominating sports fields and leading their teams to victory.",
-        details: "While Athletic Jocks excel in physical activities and team sports, they may struggle with short temper and overconfidence.",
+        description: "Athletes are physical powerhouses, dominating sports fields and leading their teams to victory.",
+        details: "While Athletes excel in physical activities and team sports, they may struggle with short temper and overconfidence.",
         negativeDescription: "Short Temper: -1 penalty to Charisma-based skill checks when faced with opposition or conflict.\nOverconfidence: May underestimate opponents, resulting in a -1 penalty to AC when in combat."
     },
     gothicArtist: {
@@ -41,8 +41,8 @@ const classDetails = {
             creativeExpression: "+2 bonus to Wisdom-based skill checks related to artistic endeavors.",
             mysticAura: "Can intimidate others with their dark and mysterious demeanor, granting advantage on Intimidation checks."
         },
-        description: "Gothic Artists are creative souls, expressing themselves through their unique artistic vision and mystic aura.",
-        details: "While Gothic Artists thrive in artistic endeavors and mystic pursuits, they may struggle with isolationism and emotional turmoil.",
+        description: "Artists are creative souls, expressing themselves through their unique artistic vision and mystic aura.",
+        details: "While Artists thrive in artistic endeavors and mystic pursuits, they may struggle with isolationism and emotional turmoil.",
         negativeDescription: "Isolationist: -1 penalty to Charisma-based skill checks when attempting to interact with mainstream social groups.\nEmotional Turmoil: May succumb to mood swings, resulting in a -1 penalty to concentration checks."
     },
     preppyCheerleader: {
@@ -56,8 +56,8 @@ const classDetails = {
             charismaticLeader: "+2 bonus to Charisma-based skill checks when leading or motivating others.",
             teamSpirit: "Can inspire allies with pep talks, granting them advantage on saving throws against fear."
         },
-        description: "Preppy Cheerleaders are charismatic leaders, spreading positivity and team spirit wherever they go.",
-        details: "While Preppy Cheerleaders shine as natural leaders and motivators, they may struggle with entitled attitudes and peer pressure.",
+        description: "Cheerleaders are charismatic leaders, spreading positivity and team spirit wherever they go.",
+        details: "While Cheerleaders shine as natural leaders and motivators, they may struggle with entitled attitudes and peer pressure.",
         negativeDescription: "Entitled Attitude: -1 penalty to Wisdom-based skill checks when faced with challenges that require humility or empathy.\nPeer Pressure: May succumb to social expectations, resulting in a -1 penalty to Wisdom saving throws against charm effects."
     },
     classClown: {
@@ -86,8 +86,8 @@ const classDetails = {
             independentThinker: "+2 bonus to Wisdom-based skill checks when making unconventional decisions.",
             resistanceToAuthority: "Can resist attempts to manipulate or coerce them, granting advantage on saving throws against charm effects from authority figures."
         },
-        description: "Rebel Outsiders are nonconformists, challenging authority and forging their own path with independence and resilience.",
-        details: "While Rebel Outsiders excel as independent thinkers and resilient individuals, they may struggle with alienation and risk-taking tendencies.",
+        description: "Outsiders are nonconformists, challenging authority and forging their own path with independence and resilience.",
+        details: "While Outsiders excel as independent thinkers and resilient individuals, they may struggle with alienation and risk-taking tendencies.",
         negativeDescription: "Alienation: -1 penalty to Charisma-based skill checks when attempting to connect with mainstream social groups.\nRisk Taker: May act impulsively, resulting in a -1 penalty to AC when in combat."
     },
     overachievingStudentCouncilPresident: {
@@ -101,8 +101,8 @@ const classDetails = {
             naturalLeader: "+2 bonus to Charisma-based skill checks when organizing or leading group activities.",
             efficientPlanner: "Can strategize and delegate tasks effectively, granting advantage on Intelligence-based skill checks related to planning."
         },
-        description: "Overachieving Student Council Presidents are natural leaders, guiding their peers with charisma and efficiency.",
-        details: "While Overachieving Student Council Presidents excel in leadership and planning, they may struggle with perfectionism and burnout.",
+        description: "Student Council  are natural leaders, guiding their peers with charisma and efficiency.",
+        details: "While Student Council  excel in leadership and planning, they may struggle with perfectionism and burnout.",
         negativeDescription: "Perfectionist: -1 penalty to Wisdom-based skill checks when faced with situations that require adaptability or compromise.\nBurnout: May become overwhelmed by responsibilities, resulting in a -1 penalty to initiative rolls during high-stress situations."
     }
 };
@@ -187,9 +187,9 @@ function generateCombatInfo(selectedClass) {
     // Generate combat information based on class stereotype
     switch (selectedClass) {
         case "nerdyScholar":
-            return "Combat Information for Nerdy Scholar: Prefers to avoid physical confrontations, relying on intelligence and knowledge.";
+            return "Combat Information for Scholar: Prefers to avoid physical confrontations, relying on intelligence and knowledge.";
         case "athleticJock":
-            return "Combat Information for Athletic Jock: Excels in physical combat, utilizing strength and athleticism.";
+            return "Combat Information for Athlete: Excels in physical combat, utilizing strength and athleticism.";
         // Add cases for other classes...
         default:
             return "No combat information available.";
@@ -200,9 +200,9 @@ function generateEquipment(selectedClass) {
     // Generate equipment based on class stereotype
     switch (selectedClass) {
         case "nerdyScholar":
-            return "Equipment for Nerdy Scholar: Books, research materials, scientific gadgets.";
+            return "Equipment for Scholar: Books, research materials, scientific gadgets.";
         case "athleticJock":
-            return "Equipment for Athletic Jock: Sports gear, gym equipment, team jersey.";
+            return "Equipment for Athlete: Sports gear, gym equipment, team jersey.";
         // Add cases for other classes...
         default:
             return "No equipment available.";
