@@ -371,7 +371,7 @@ function levelUp() {
         document.getElementById(abilityFields[randomIndex2]).value = parseInt(document.getElementById(abilityFields[randomIndex2]).value) + 1;
     }
 
-    // Update skills based on selected class
+    // Update skills based on selected class and level
     updateSkills(selectedClass, selectedLevel);
 
     // Update combat information based on selected class
@@ -380,7 +380,7 @@ function levelUp() {
     // Update class details based on selected class
     updateClassDetails(selectedClass);
 
-    // Update equipment based on selected class
+    // Update equipment based on selected class and level
     updateEquipment(selectedClass, selectedLevel);
 }
 
