@@ -446,7 +446,7 @@ function generatePDF() {
             const imgData = canvas.toDataURL('image/png');
 
             // Add image of character sheet to PDF
-            pdf.addImage(imgData, 'PNG', 40, 300, 515, 300); // Adjust position and dimensions as needed
+            pdf.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); // Adjust position and dimensions as needed
 
             // Save PDF with character name as filename
             pdf.save(`${charName}_CharacterSheet.pdf`);
