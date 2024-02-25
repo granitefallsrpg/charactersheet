@@ -438,32 +438,20 @@ function generatePDF() {
         pdf.text(appearance, 50, 200); // Adjust position as needed
 
         // Convert character sheet HTML to PDF
-pdf.html(characterSheet, {
-    html2canvas: { scale: 0.5 }, // Adjust scale if needed for better quality
-    callback: function(pdf) {
-        // Get HTML content dimensions
-        const contentWidth = characterSheet.offsetWidth;
-        const contentHeight = characterSheet.offsetHeight;
+        html2canvas(characterSheet, {
+            scale: 2, // Adjust scale if needed for better quality
+            logging: true,
+            useCORS: true
+        }).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
 
-        // Calculate position to center content horizontally
-        const marginLeft = (pdf.internal.pageSize.getWidth() - contentWidth) / 2;
+            // Add image of character sheet to PDF
+            pdf.addImage(imgData, 'PNG', 40, 300, 515, 300); // Adjust position and dimensions as needed
 
-        // Position HTML content at calculated horizontal center and at the top of the page
-        // pdf.fromHTML(characterSheet, marginLeft, 50); // Remove this line
-
-        // Add page break after Appearance section
-        pdf.addPage();
-        // Add page break after Skills section
-        pdf.addPage();
-        // Add page break after Combat Information section
-        pdf.addPage();
-
-        // Save PDF with character name as filename
-        pdf.save(`${charName}_CharacterSheet.pdf`);
-        resolve();
-    }
-});
-
+            // Save PDF with character name as filename
+            pdf.save(`${charName}_CharacterSheet.pdf`);
+            resolve();
+        });
     });
 }
 
