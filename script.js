@@ -433,6 +433,11 @@ function generatePDF() {
         const imgData = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrGKyvPwx9IJMSVxxTAFcFMBK46yTgefJEg&usqp=CAU'; // Background image link
         pdf.addImage(imgData, 'JPEG', 0, 0, 595.28, 841.89); // A4 dimensions in points (595.28 x 841.89)
 
+        // Add content of background and appearance text areas
+        pdf.setFontSize(12); // Set font size
+        pdf.text(background, 50, 100, { maxWidth: 495 }); // Adjust position and maxWidth as needed
+        pdf.text(appearance, 50, 200, { maxWidth: 495 }); // Adjust position and maxWidth as needed
+
         // Convert character sheet HTML to PDF
         html2canvas(characterSheet, {
             scale: 2, // Adjust scale if needed for better quality
@@ -457,4 +462,5 @@ document.getElementById("saveCharacterBtn").addEventListener("click", function()
         // Optionally, you can perform additional actions after PDF generation is complete
     });
 });
+
 
